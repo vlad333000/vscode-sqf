@@ -192,7 +192,7 @@
                     "name": "variable.language.function.bis.sqf"
                 },
                 {
-                    "match": "(?i)\\b(ace|acex|cba|tf|tfar|acre|cse|agm|rhs|lib|bis|hlc|cup|epoch|bp|armst|mcc|xcam|sma|jsrs|alive|uns|ffaa|fow|op|lop|op|sthud|stnt|stgi|stui|stsb|stab|fir|fhq|sgtu|wog|rb|hmg|ha)_\\w*\\b",
+                    "match": "(?i)\\b(ace|acex|acre|agm|alive|armst|bis|bp|cba|cse|cup|epoch|ffaa|fhq|fir|fow|ha|hlc|hmg|jsrs|lib|lop|mcc|op|rb|rhs|sma|stab|stgi|stgu|sthud|stnt|stsb|stui|tf|tfar|uns|vtn|wog|xcam)_\\w*\\b",
                     "name": "support.variable.$1.sqf"
                 },
                 {
