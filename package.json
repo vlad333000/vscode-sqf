@@ -1,0 +1,62 @@
+{
+    "name": "sqf",
+    "displayName": "SQF Language",
+    "description": "Provides snippets, syntax highlighting and themes in SQF files",
+    "version": "0.5.0",
+    "publisher": "Vlad333000",
+    "engines": {
+        "vscode": "*"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "sqf",
+                "extensions": [
+                    ".sqf"
+                ],
+                "aliases": [
+                    "SQF",
+                    "sqf",
+                    "Status Quo Function"
+                ],
+                "configuration": "./configs/sqf.language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "sqf",
+                "scopeName": "source.sqf",
+                "path": "./syntaxes/sqf.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "sqf",
+                "path": "./snippets/sqf.json"
+            }
+        ],
+        "themes": [
+            {
+                "id": "SQF-Dark",
+                "label": "[SQF] Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/sqf.dark.json"
+            },
+            {
+                "id": "SQF-Light",
+                "label": "[SQF] Light",
+                "uiTheme": "vs",
+                "path": "./themes/sqf.light.json"
+            },
+            {
+                "id": "SQF-High-contrast-black",
+                "label": "[SQF] High Contrast (Black)",
+                "uiTheme": "hc-black",
+                "path": "./themes/sqf.hc.black.json"
+            }
+        ]
+    }
+}

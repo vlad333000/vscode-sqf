@@ -1,0 +1,231 @@
+{
+	"$schema": "vscode://schemas/color-theme",
+	"name": "SQF (HC - Black)",
+	"tokenColors": [
+        {
+            "name": "Comments",
+            "scope": [
+                "punctuation.definition.comment.block.begin.sqf",
+                "punctuation.definition.comment.block.end.sqf",
+                "punctuation.definition.comment.line.double-slash.sqf",
+                "comment.block.sqf",
+                "comment.line.double-slash.sqf"
+            ],
+            "settings": {
+                "foreground": "#608B4E"
+            }
+        },
+        {
+            "name": "Preprocessor",
+            "scope": [
+                "punctuation.definition.preprocessor.sqf",
+                "punctuation.separator.continuation.sqf",
+                "keyword.other.preprocessor.sqf"
+            ],
+            "settings": {
+                "foreground": "#c586c0"
+            }
+        },
+        {
+            "name": "Strings",
+            "scope": [
+                "punctuation.definition.string.quoted.double.begin.sqf",
+                "punctuation.definition.string.quoted.double.end.sqf",
+                "punctuation.definition.string.quoted.single.begin.sqf",
+                "punctuation.definition.string.quoted.single.end.sqf",
+                "punctuation.definition.string.quoted.other.begin.sqf",
+                "punctuation.definition.string.quoted.other.end.sqf",
+                "string.quoted.double.sqf",
+                "string.quoted.single.sqf",
+                "string.quoted.other.sqf"
+            ],
+            "settings": {
+                "foreground": "#CE9178"
+            }
+        },
+        {
+            "name": "Punctuation",
+            "scope": [
+                "punctuation.terminator.sqf",
+                "punctuation.separator.sqf",
+                "punctuation.section.block.begin.sqf",
+                "punctuation.section.block.end.sqf",
+                "punctuation.section.array.begin.sqf",
+                "punctuation.section.array.end.sqf",
+                "punctuation.section.group.begin.sqf",
+                "punctuation.section.group.end.sqf"
+            ],
+            "settings": {
+                "foreground": "#D4D4D4"
+            }
+        },
+        {
+            "name": "Public variables",
+            "scope": [
+                "variable.name.public.sqf"
+            ],
+            "settings": {
+                "foreground": "#9CDCFE"
+            }
+        },
+        {
+            "name": "Private variables",
+            "scope": [
+                "variable.name.private.sqf"
+            ],
+            "settings": {
+                "foreground": "#569CD6"
+            }
+        },
+        {
+            "name": "Operators",
+            "scope": [
+                "keyword.operator.sqf",
+                "keyword.operator.arithmetic.sqf",
+                "keyword.operator.logical.sqf",
+                "keyword.operator.comparision.sqf",
+                "keyword.operator.assignment.sqf",
+                "keyword.operator.word.sqf"
+            ],
+            "settings": {
+                "foreground": "#D4D4D4"
+            }
+        },
+        {
+            "name": "BIS variables and functions",
+            "scope": [
+                "variable.language.function.bis.sqf"
+            ],
+            "settings": {
+                "foreground": "#D4D4D4"
+            }
+        },
+        {
+            "name": "Other libraries",
+            "scope": [
+                "support.variable"
+            ],
+            "settings": {
+                "foreground": "#D7BA7D"
+            }
+        },
+        {
+            "name": "Numbers",
+            "scope": [
+                "constant.numeric.hex.sqf",
+                "constant.numeric.float.sqf"
+            ],
+            "settings": {
+                "foreground": "#B5CEA8"
+            }
+        },
+        {
+            "name": "Preprocessor macro",
+            "scope": [
+                "meta.preprocessor.define.sqf",
+                "meta.preprocessor.define.parameters.sqf"
+            ],
+            "settings": {
+                "foreground": "#569CD6"
+            }
+        },
+        {
+            "name": "Preprocessor macro - name",
+            "scope": [
+                "variable.other.constant.sqf",
+                "variable.other.constant.parameter.sqf"
+            ],
+            "settings": {
+                "foreground": "#9CDCFE"
+            }
+        },
+        {
+            "name": "Preprocessor macro - punctuation",
+            "scope": [
+                "punctuation.definition.preprocessor.parameters.begin.sqf",
+                "punctuation.definition.preprocessor.parameters.end.sqf",
+                "punctuation.definition.preprocessor.parameters.separator.sqf"
+            ],
+            "settings": {
+                "foreground": "#9CDCFE"
+            }
+        },
+        {
+            "name": "Errors",
+            "scope": [
+                "invalid.illegal.missing-semicolon.sqf",
+                "invalid.illegal.missing-coma.sqf",
+                "invalid.illegal.missing-index.sqf",
+                "invalid.illegal.wrong-preprocessor-command.sqf",
+                "invalid.illegal.wrong-character-reference.sqf",
+                "invalid.illegal.wrong-format.sqf",
+                "invalid.illegal.wrong-format-attribute.sqf"
+            ],
+            "settings": {
+                "foreground": "#F44747"
+            }
+        },
+        {
+            "name": "Deprecated",
+            "scope": [
+                "invalid.deprecated.operator.word.sqf",
+                "invalid.deprecated.operator.word.sqs-only.sqf",
+                "invalid.deprecated.operator.word.old-editor.sqf",
+                "invalid.deprecated.operator.word.sqs-is-deprecated.sqf",
+                "invalid.deprecated.function.bis.sqf"
+            ],
+            "settings": {
+                "foreground": "#F44747"
+            }
+        },
+        {
+            "name": "Character escape",
+            "scope": [
+                "constant.character.escape.quote.double.sqf",
+                "constant.character.escape.quote.single.sqf",
+                "constant.character.escape.format-insert.sqf",
+                "constant.character.escape.character-reference.word.sqf",
+                "constant.character.escape.character-reference.numeric.sqf",
+                "constant.character.escape.linebreak.sqf"
+            ],
+            "settings": {
+                "foreground": "#D7BA7D"
+            }
+        },
+        {
+            "name": "Format",
+            "scope": [
+                "constant.other.format.img.begin.sqf",
+                "constant.other.format.img.end.sqf",
+                "constant.other.format.img.sqf",
+                "constant.other.format.img.attributes.sqf",
+                "constant.other.format.a.begin.sqf",
+                "constant.other.format.a.end.sqf",
+                "constant.other.format.a.attributes.sqf",
+                "constant.other.format.t.begin.sqf",
+                "constant.other.format.t.end.sqf",
+                "constant.other.format.t.attributes.sqf",
+
+                "constant.other.format.attribute.image.sqf",
+                "constant.other.format.attribute.image.value.sqf",
+                "constant.other.format.attribute.href.sqf",
+                "constant.other.format.attribute.href.value.sqf",
+                "constant.other.format.attribute.color.sqf",
+                "constant.other.format.attribute.color.value.sqf",
+                "constant.other.format.attribute.size.sqf",
+                "constant.other.format.attribute.size.value.sqf",
+                "constant.other.format.attribute.font.sqf",
+                "constant.other.format.attribute.font.value.sqf",
+                "constant.other.format.attribute.align.sqf",
+                "constant.other.format.attribute.align.value.sqf",
+                "constant.other.format.attribute.underline.sqf",
+                "constant.other.format.attribute.underline.value.sqf",
+                "constant.other.format.attribute.shadow.sqf",
+                "constant.other.format.attribute.shadow.value.sqf"
+            ],
+            "settings": {
+                "foreground": "#D7BA7D"
+            }
+        }
+	]
+}

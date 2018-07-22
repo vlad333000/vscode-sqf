@@ -1,0 +1,541 @@
+{
+    "xor": {
+        "prefix": "xor",
+        "body": [
+            "((${1:A} || ${2:B}) && !(${1:A} && ${2:B}))$0"
+        ],
+        "description": "((A || B) && !(A && B))"
+    },
+    "nor": {
+        "prefix": "nor",
+        "body": [
+            "!(${1:A} || ${2:B})$0"
+        ],
+        "description": "!(A || B)"
+    },
+    "nand": {
+        "prefix": "nand",
+        "body": [
+            "!(${1:A} && ${2:B})$0"
+        ],
+        "description": "!(A && B)"
+    },
+
+    "if": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) then {",
+            "\t$0",
+            "};"
+        ],
+        "description": "if (...) then {...};"
+    },
+    "if-array": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) then [{$0}, {}];"
+        ],
+        "description": "if (...) then [{...}, {...}];"
+    },
+    "if-else": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) then {",
+            "\t$0",
+            "} else {",
+            "\t",
+            "};"
+        ],
+        "description": "if (...) then {...} else {...};"
+    },
+    "if-exit": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) exitWith {",
+            "\t$0",
+            "};"
+        ],
+        "description": "if (...) exitWith {...};"
+    },
+    "if-throw": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) throw [__FILE__, __LINE__, \"${2:exception}\"];",
+            "$0"
+        ],
+        "description": "if (...) throw ...;"
+    },
+
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for \"${1:_i}\" from ${2:A} to ${3:B} do {",
+            "\t$0",
+            "};"
+        ],
+        "description": "for \"_i\" from A to B do {...};"
+    },
+    "for-spec": {
+        "prefix": "for",
+        "body": [
+            "for [{ ${1:_i = A} }, { ${2:_i < B} }, { ${3:_i = _i + 1} }] do {",
+            "\t$0",
+            "};"
+        ],
+        "description": "for [{...}, {...}, {...}] do {...};"
+    },
+    "for-step": {
+        "prefix": "for",
+        "body": [
+            "for \"${1:_i}\" from ${2:A} to ${3:B} step ${4:1} do {",
+            "\t$0",
+            "};"
+        ],
+        "description": "for \"_i\" from A to B step C do {...};"
+    },
+
+    "while": {
+        "prefix": "while",
+        "body": [
+            "while { ${1:condition} } do {",
+            "\t$0",
+            "};"
+        ],
+        "description": "while {...} do {...};"
+    },
+    "do-while": {
+        "prefix": "do-while",
+        "body": [
+            "$0",
+            "while { ${1:condition} } do {",
+            "\t$0",
+            "};"
+        ],
+        "description": "do {...} while (...);"
+    },
+
+    "switch": {
+        "prefix": "switch",
+        "body": [
+            "switch (${1:condition}) do {",
+            "\t$0",
+            "};"
+        ],
+        "description": "switch (...) do {...};"
+    },
+    "case": {
+        "prefix": "case",
+        "body": [
+            "case ${1:value}: {",
+            "\t$0",
+            "};"
+        ],
+        "description": "case A: {...};"
+    },
+    "case-same": {
+        "prefix": "case",
+        "body": [
+            "case ${1:value};",
+            "$0"
+        ],
+        "description": "case A;"
+    },
+    "default": {
+        "prefix": "default",
+        "body": [
+            "default {",
+            "\t$0",
+            "};"
+        ],
+        "description": "default {...};"
+    },
+
+    "with": {
+        "prefix": "with",
+        "body": [
+            "with ${1:namespace} do {",
+            "\t$0",
+            "};"
+        ],
+        "description": "with namespace do {...};"
+    },
+
+    "variable-set": {
+        "prefix": "setvar",
+        "body": [
+            "${1:namespace} setVariable [\"${2:TAG}_${3:name}\", ${4:value}];",
+            "$0"
+        ],
+        "description": "space setVariable [name, A];"
+    },
+    "variable-set-share": {
+        "prefix": "setvar",
+        "body": [
+            "${1:namespace} setVariable [\"${2:TAG}_${3:name}\", ${4:value}, ${5:share}];",
+            "$0"
+        ],
+        "description": "space setVariable [name, A, true];"
+    },
+
+    "variable-get": {
+        "prefix": "getvar",
+        "body": [
+            "${1:namespace} getVariable \"${2:TAG}_${3:name}\"$0"
+        ],
+        "description": "space getVariable name"
+    },
+    "variable-get-default": {
+        "prefix": "getvar",
+        "body": [
+            "${1:namespace} getVariable [\"${2:TAG}_${3:name}\", ${4:default}]$0"
+        ],
+        "description": "space getVariable [name, A]"
+    },
+
+    "call": {
+        "prefix": "call",
+        "body": [
+            "[$1] call ${2:TAG}_fnc_${3:name}$0"
+        ],
+        "description": "[] call func"
+    },
+    "call-return": {
+        "prefix": "call",
+        "body": [
+            "${1:variable} = [$2] call ${3:TAG}_fnc_${4:name};",
+            "$0"
+        ],
+        "description": "variable = [] call func"
+    },
+    "spawn": {
+        "prefix": "spawn",
+        "body": [
+            "${1:handle} = [$2] spawn ${3:TAG}_fnc_${4:name};",
+            "$0"
+        ],
+        "description": "handle = [] spawn func;"
+    },
+    "exec-sqf": {
+        "prefix": "exec",
+        "body": [
+            "${1:handle} = [$2] execVM \"${3:file}.sqf\";",
+            "$0"
+        ],
+        "description": "handle = [] execVM file;"
+    },
+    "exec-fsm": {
+        "prefix": "exec",
+        "body": [
+            "${1:handle} = [$2] execFSM \"${3:file}.fsm\";",
+            "$0"
+        ],
+        "description": "handle = [] execFSM file;"
+    },
+    "exec-sqs": {
+        "prefix": "exec",
+        "body": [
+            "[$1] exec \"${2:file}.sqs\";",
+            "$0"
+        ],
+        "description": "[] exec file;"
+    },
+
+    "compile": {
+        "prefix": "compile",
+        "body": [
+            "${1:TAG}_fnc_${2:name} = compile preprocessFileLineNumbers \"${3:file}.sqf\";",
+            "$0"
+        ],
+        "description": "Compile function"
+    },
+    "compile-final": {
+        "prefix": "compile",
+        "body": [
+            "${1:TAG}_fnc_${2:name} = compileFinal preprocessFileLineNumbers \"${3:file}.sqf\";",
+            "$0"
+        ],
+        "description": "Compile function and protect it from overwrite"
+    },
+
+    "log": {
+        "prefix": "log",
+        "body": [
+            "diag_log formatText [\"%1(%2) [LOG] %3\", __FILE__, __LINE__, \"${1:message}\"];",
+            "$0"
+        ],
+        "description": "Write message to .rpt-file"
+    },
+    "warning": {
+        "prefix": "warning",
+        "body": [
+            "diag_log formatText [\"%1(%2) [WARNING] %3\", __FILE__, __LINE__, \"${1:message}\"];",
+            "$0"
+        ],
+        "description": "Write warning to .rpt-file"
+    },
+    "error": {
+        "prefix": "error",
+        "body": [
+            "diag_log formatText [\"%1(%2) [ERROR] %3\", __FILE__, __LINE__, \"${1:message}\"];",
+            "throw [__FILE__, __LINE__, \"${1:message}\"];",
+            "$0"
+        ],
+        "description": "Write error to .rpt-file and throw exception"
+    },
+    "assert": {
+        "prefix": "assert",
+        "body": [
+            "if !(${1:condition}) then {",
+            "\tdiag_log formatText [\"%1(%2) [ERROR] %3\", __FILE__, __LINE__, format [\"Assertion failed: %1\", { ${1:condition}; }]];",
+            "\tthrow [__FILE__, __LINE__, format [\"Assertion failed: %1\", { ${1:condition}; }]];",
+            "};",
+            "$0"
+        ],
+        "description": "Check condition and throw exception if false"
+    },
+
+    "return": {
+        "prefix": "return",
+        "body": [
+            "if (true) exitWith { ${1:value} };",
+            "$0"
+        ],
+        "description": "Return value to parent scope"
+    },
+    "return-if": {
+        "prefix": "return",
+        "body": [
+            "if (${1:condition}) exitWith { ${2:value} };",
+            "$0"
+        ],
+        "description": "Return value to parent scope if condition is true"
+    },
+    "return-scope": {
+        "prefix": "return",
+        "body": [
+            "${1:value} breakOut \"${2:scope}\";",
+            "$0"
+        ],
+        "description": "Return value from scope"
+    },
+
+    "increment": {
+        "prefix": "inc",
+        "body": [
+            "${1:A} = ${1:A} + 1;",
+            "$0"
+        ],
+        "description": "A = A + 1;"
+    },
+    "decrement": {
+        "prefix": "dec",
+        "body": [
+            "${1:A} = ${1:A} - 1;",
+            "$0"
+        ],
+        "description": "A = A - 1;"
+    },
+
+    "compound-assignment-add": {
+        "prefix": "add=",
+        "body": [
+            "${1:A} = ${1:A} + ${2:B};",
+            "$0"
+        ],
+        "description": "A = A + B;"
+    },
+    "compound-assignment-sub": {
+        "prefix": "sub=",
+        "body": [
+            "${1:A} = ${1:A} - ${2:B};",
+            "$0"
+        ],
+        "description": "A = A - B;"
+    },
+    "compound-assignment-mul": {
+        "prefix": "mul=",
+        "body": [
+            "${1:A} = ${1:A} * ${2:B};",
+            "$0"
+        ],
+        "description": "A = A * B;"
+    },
+    "compound-assignment-div": {
+        "prefix": "div=",
+        "body": [
+            "${1:A} = ${1:A} / ${2:B};",
+            "$0"
+        ],
+        "description": "A = A / B;"
+    },
+    "compound-assignment-pow": {
+        "prefix": "pow=",
+        "body": [
+            "${1:A} = ${1:A} ^ ${2:B};",
+            "$0"
+        ],
+        "description": "A = A ^ B;"
+    },
+    "compound-assignment-mod": {
+        "prefix": "mod=",
+        "body": [
+            "${1:A} = ${1:A} % ${2:B};",
+            "$0"
+        ],
+        "description": "A = A % B;"
+    },
+    "compound-assignment-sqr": {
+        "prefix": "sqr=",
+        "body": [
+            "${1:A} = ${1:A} ^ 2;",
+            "$0"
+        ],
+        "description": "A = A ^ 2;"
+    },
+
+    "sqr": {
+        "prefix": "sqr",
+        "body": [
+            "(${1:A} ^ 2)$0"
+        ],
+        "description": "(A ^ 2)"
+    },
+
+    "select": {
+        "prefix": "select",
+        "body": [
+            "${1:array} select ${2:index}$0"
+        ],
+        "description": "ARRAY select INDEX"
+    },
+    "select-hash": {
+        "prefix": "select",
+        "body": [
+            "${1:array} # ${2:index}$0"
+        ],
+        "description": "ARRAY # INDEX"
+    },
+    "select-bool": {
+        "prefix": "select",
+        "body": [
+            "[${3:false}, ${2:true}] select ${1:condition}$0"
+        ],
+        "description": "[A, B] select condition"
+    },
+
+    "try-catch": {
+        "prefix": "try",
+        "body": [
+            "try {",
+            "\t$0",
+            "} catch {",
+            "\t",
+            "};"
+        ],
+        "description": "Execute code and catch exceptions"
+    },
+    "try-catch-params": {
+        "prefix": "try",
+        "body": [
+            "[$1] try {",
+            "\t$0",
+            "} catch {",
+            "\t",
+            "};"
+        ],
+        "description": "Execute code with params and catch exceptions"
+    },
+    "try-catch-fnc": {
+        "prefix": "try",
+        "body": [
+            "[$1] try ${2:TAG}_fnc_${3:name} catch {$0};"
+        ],
+        "description": "Execute function and catch exceptions"
+    },
+
+    "name-variable": {
+        "prefix": "var",
+        "body": [
+            "${1:TAG}_${2:name}"
+        ],
+        "description": "Variable name"
+    },
+    "name-function": {
+        "prefix": "fnc",
+        "body": [
+            "${1:TAG}_fnc_${2:name}"
+        ],
+        "description": "Function name"
+    },
+
+    "include": {
+        "prefix": "include",
+        "body": [
+            "#include \"${1:FILE}\"",
+            "$0"
+        ],
+        "description": "#include \"FILE\""
+    },
+    "define": {
+        "prefix": "define",
+        "body": [
+            "#define ${1:MACRO} $0"
+        ],
+        "description": "#define A"
+    },
+    "define-params": {
+        "prefix": "define",
+        "body": [
+            "#define ${1:MACRO}($2) $0"
+        ],
+        "description": "#define A(B)"
+    },
+    "undefine": {
+        "prefix": "undefine",
+        "body": [
+            "#undef ${1:MACRO}",
+            "$0"
+        ],
+        "description": "#undef A"
+    },
+    "if-defined": {
+        "prefix": "ifdef",
+        "body": [
+            "#ifdef ${1:MACRO}",
+            "$0",
+            "#endif"
+        ],
+        "description": "#ifdef ... #endif"
+    },
+    "if-defined-else": {
+        "prefix": "ifdef",
+        "body": [
+            "#ifdef ${1:MACRO}",
+            "$0",
+            "#else",
+            "",
+            "#endif"
+        ],
+        "description": "#ifdef ... #else ... #endif"
+    },
+    "if-undefined": {
+        "prefix": "ifndef",
+        "body": [
+            "#ifndef ${1:MACRO}",
+            "$0",
+            "#endif"
+        ],
+        "description": "#ifndef ... #endif"
+    },
+    "if-undefined-else": {
+        "prefix": "ifndef",
+        "body": [
+            "#ifndef ${1:MACRO}",
+            "$0",
+            "#else",
+            "",
+            "#endif"
+        ],
+        "description": "#ifndef ... #else ... #endif"
+    }
+}
