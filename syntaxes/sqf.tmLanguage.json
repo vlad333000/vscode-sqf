@@ -1006,7 +1006,7 @@
             "patterns": [
                 {
                     "match": "##",
-                    "name": "keyword.other.preprocessor.sqf"
+                    "name": "keyword.other.preprocessor.cat.sqf"
                 }
             ]
         },
@@ -1014,7 +1014,7 @@
             "patterns": [
                 {
                     "match": "#",
-                    "name": "keyword.other.preprocessor.sqf"
+                    "name": "keyword.other.preprocessor.str.sqf"
                 }
             ]
         },
@@ -1022,7 +1022,7 @@
             "patterns": [
                 {
                     "match": "\\b__FILE__\\b",
-                    "name": "keyword.other.preprocessor.sqf"
+                    "name": "keyword.other.preprocessor.file.sqf"
                 }
             ]
         },
@@ -1030,7 +1030,7 @@
             "patterns": [
                 {
                     "match": "\\b__LINE__\\b",
-                    "name": "keyword.other.preprocessor.sqf"
+                    "name": "keyword.other.preprocessor.line.sqf"
                 }
             ]
         }
