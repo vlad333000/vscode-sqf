@@ -17,7 +17,7 @@ SQF Language support for VS Code
 
 ![Highlight identifiers reserved by developers and most popular mods](/images/reserved_identifiers.png)
 
-* Structured text attributes, escape characters and placeholders [Wiki](https://community.bistudio.com/wiki/Structured_Text)
+* Highlight structured text attributes, escape characters and placeholders [Wiki](https://community.bistudio.com/wiki/Structured_Text)
 
 ![Structured text attributes, escape characters and placeholders](/images/structured_text.png)
 
