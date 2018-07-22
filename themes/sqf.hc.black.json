@@ -20,10 +20,14 @@
             "scope": [
                 "punctuation.definition.preprocessor.sqf",
                 "punctuation.separator.continuation.sqf",
-                "keyword.other.preprocessor.sqf"
+                "keyword.other.preprocessor.sqf",
+                "keyword.other.preprocessor.cat.sqf",
+                "keyword.other.preprocessor.str.sqf",
+                "keyword.other.preprocessor.line.sqf",
+                "keyword.other.preprocessor.file.sqf"
             ],
             "settings": {
-                "foreground": "#c586c0"
+                "foreground": "#C586C0"
             }
         },
         {
@@ -65,7 +69,7 @@
                 "variable.name.public.sqf"
             ],
             "settings": {
-                "foreground": "#9CDCFE"
+                "foreground": "#FA9A2C"
             }
         },
         {
@@ -74,7 +78,7 @@
                 "variable.name.private.sqf"
             ],
             "settings": {
-                "foreground": "#569CD6"
+                "foreground": "#D7BA7D"
             }
         },
         {
@@ -84,11 +88,19 @@
                 "keyword.operator.arithmetic.sqf",
                 "keyword.operator.logical.sqf",
                 "keyword.operator.comparision.sqf",
-                "keyword.operator.assignment.sqf",
-                "keyword.operator.word.sqf"
+                "keyword.operator.assignment.sqf"
             ],
             "settings": {
                 "foreground": "#D4D4D4"
+            }
+        },
+        {
+            "name": "Operators (Word)",
+            "scope": [
+                "keyword.operator.word.sqf"
+            ],
+            "settings": {
+                "foreground": "#569CD6"
             }
         },
         {
@@ -97,7 +109,16 @@
                 "variable.language.function.bis.sqf"
             ],
             "settings": {
-                "foreground": "#D4D4D4"
+                "foreground": "#569CD6"
+            }
+        },
+        {
+            "name": "Language variables",
+            "scope": [
+                "variable.language.sqf"
+            ],
+            "settings": {
+                "foreground": "#569CD6"
             }
         },
         {
@@ -106,7 +127,7 @@
                 "support.variable"
             ],
             "settings": {
-                "foreground": "#D7BA7D"
+                "foreground": "#9CDCFE"
             }
         },
         {
@@ -133,10 +154,18 @@
             "name": "Preprocessor macro - name",
             "scope": [
                 "variable.other.constant.sqf",
-                "variable.other.constant.parameter.sqf"
             ],
             "settings": {
                 "foreground": "#9CDCFE"
+            }
+        },
+        {
+            "name": "Preprocessor macro - parameter",
+            "scope": [
+                "variable.other.constant.parameter.sqf"
+            ],
+            "settings": {
+                "foreground": "#D7BA7D"
             }
         },
         {
@@ -147,7 +176,7 @@
                 "punctuation.definition.preprocessor.parameters.separator.sqf"
             ],
             "settings": {
-                "foreground": "#9CDCFE"
+                "foreground": "#D4D4D4"
             }
         },
         {

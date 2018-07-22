@@ -20,10 +20,14 @@
             "scope": [
                 "punctuation.definition.preprocessor.sqf",
                 "punctuation.separator.continuation.sqf",
-                "keyword.other.preprocessor.sqf"
+                "keyword.other.preprocessor.sqf",
+                "keyword.other.preprocessor.cat.sqf",
+                "keyword.other.preprocessor.str.sqf",
+                "keyword.other.preprocessor.line.sqf",
+                "keyword.other.preprocessor.file.sqf"
             ],
             "settings": {
-                "foreground": "#CE9178"
+                "foreground": "#AF00DB"
             }
         },
         {
@@ -65,7 +69,7 @@
                 "variable.name.public.sqf"
             ],
             "settings": {
-                "foreground": "#0000ff"
+                "foreground": "#FFA137"
             }
         },
         {
@@ -74,7 +78,7 @@
                 "variable.name.private.sqf"
             ],
             "settings": {
-                "foreground": "#569CD6"
+                "foreground": "#795E26"
             }
         },
         {
@@ -92,12 +96,30 @@
             }
         },
         {
+            "name": "Operators (Word)",
+            "scope": [
+                "keyword.operator.word.sqf"
+            ],
+            "settings": {
+                "foreground": "#0000FF"
+            }
+        },
+        {
             "name": "BIS variables and functions",
             "scope": [
                 "variable.language.function.bis.sqf"
             ],
             "settings": {
-                "foreground": "#000000"
+                "foreground": "#0000FF"
+            }
+        },
+        {
+            "name": "Language variables",
+            "scope": [
+                "variable.language.sqf"
+            ],
+            "settings": {
+                "foreground": "#0000FF"
             }
         },
         {
@@ -106,7 +128,7 @@
                 "support.variable"
             ],
             "settings": {
-                "foreground": "#86641b"
+                "foreground": "#1495FF"
             }
         },
         {
@@ -132,11 +154,19 @@
         {
             "name": "Preprocessor macro - name",
             "scope": [
-                "variable.other.constant.sqf",
+                "variable.other.constant.sqf"
+            ],
+            "settings": {
+                "foreground": "#1495FF"
+            }
+        },
+        {
+            "name": "Preprocessor macro - parameter",
+            "scope": [
                 "variable.other.constant.parameter.sqf"
             ],
             "settings": {
-                "foreground": "#569CD6"
+                "foreground": "#795E26"
             }
         },
         {
@@ -147,7 +177,7 @@
                 "punctuation.definition.preprocessor.parameters.separator.sqf"
             ],
             "settings": {
-                "foreground": "#569CD6"
+                "foreground": "#000000"
             }
         },
         {
