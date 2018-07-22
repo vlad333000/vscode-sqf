@@ -30,4 +30,7 @@ SQF Language support for VS Code
 * [ArmA 3 (v1.82 Retail)](https://community.bistudio.com/wiki/Category:Arma_3:_Editing)
   * [Functions](https://community.bistudio.com/wiki/Category:Arma_3:_Functions)
   * [Commands](https://community.bistudio.com/wiki/Category:Scripting_Commands_Arma_3)
-  * Reserved identifiers: ACE, ACEX, ACRE, AGM, ALIVE, ARMST, BIS, BP, CBA, CSE, CUP, EPOCH, FFAA, FHQ, FIR, FOW, HA, HLC, HMG, JSRS, LIB, LOP, MCC, OP, RB, RHS, SMA, STAB, STGI, STGU, STHUD, STNT, STSB, STUI, TF, TFAR, UNS, VTN, WOG, XCAM
+  * Reserved identifiers:
+  ```
+  ACE, ACEX, ACRE, AGM, ALIVE, ARMST, BIS, BP, CBA, CSE, CUP, EPOCH, FFAA, FHQ, FIR, FOW, HA, HLC, HMG, JSRS, LIB, LOP, MCC, OP, RB, RHS, SMA, STAB, STGI, STGU, STHUD, STNT, STSB, STUI, TF, TFAR, UNS, VTN, WOG, XCAM
+  ```
