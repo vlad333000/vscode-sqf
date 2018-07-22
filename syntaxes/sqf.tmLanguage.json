@@ -184,7 +184,7 @@
         "variable": {
             "patterns": [
                 {
-                    "include": "(?i)\\b(?:_this|_thisscript|_thiseventhandler|_x|_foreachindex|_exception|this|thislist|thistrigger|_fnc_scriptname|_fnc_scriptnameparent)\\b",
+                    "match": "(?i)\\b(?:_this|_thisscript|_thiseventhandler|_x|_foreachindex|_exception|this|thislist|thistrigger|_fnc_scriptname|_fnc_scriptnameparent)\\b",
                     "name": "variable.language.sqf"
                 },
                 {
