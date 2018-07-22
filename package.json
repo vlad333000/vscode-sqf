@@ -1,14 +1,31 @@
 {
     "name": "sqf",
     "displayName": "SQF Language",
-    "description": "Provides snippets, syntax highlighting and themes in SQF files",
+    "description": "SQF Language support for VS Code",
     "version": "0.5.0",
     "publisher": "Vlad333000",
+    "license": "GPL-3.0-or-later",
+    "homepage": "https://github.com/vlad333000/vscode-sqf/blob/master/README.md",
+    "bugs": {
+        "url": "https://github.com/vlad333000/vscode-sqf/issues",
+        "email": "vladsazonov@hotmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vlad333000/vscode-sqf.git"
+    },
     "engines": {
         "vscode": "*"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Snippets",
+        "Themes"
+    ],
+    "keywords": [
+        "sqf",
+        "Arma",
+        "Arma 3"
     ],
     "contributes": {
         "languages": [

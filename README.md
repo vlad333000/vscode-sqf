@@ -6,14 +6,18 @@ SQF Language support for VS Code
 
 * Full SQF language syntax
 * Preprocessor commands
-* Highlight deprecated commands and functions and
+![Preprocessor commands](/images/preprocessor.png)
+* Highlight deprecated commands/functions and invalid statements
+![Highlight deprecated commands/functions and invalid statements](/images/errors.png)
 * Highlight identifiers reserved by developers and most popular mods (Such as [ACE](https://github.com/acemod/ACE3), [CBA A3](https://github.com/CBATeam/CBA_A3), [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio))
-* Highlight structured text attributes [Wiki](https://community.bistudio.com/wiki/Structured_Text)
-* Dark, Light and High Contrast (Black) themes based on Default+ themes
+![Highlight identifiers reserved by developers and most popular mods](/images/reserved_identifiers.png)
+* Structured text attributes, escape characters and placeholders [Wiki](https://community.bistudio.com/wiki/Structured_Text)
+![Structured text attributes, escape characters and placeholders](/images/structured_text.png)
+* Dark, Light and High Contrast (Black) themes
+![Dark, Light and High Contrast (Black) themes](/images/themes.png)
 
 ## Supported products:
 
 * [ArmA 3 (v1.82 Retail)](https://community.bistudio.com/wiki/Category:Arma_3:_Editing)
   * [Functions](https://community.bistudio.com/wiki/Category:Arma_3:_Functions)
   * [Commands](https://community.bistudio.com/wiki/Category:Scripting_Commands_Arma_3)
-
