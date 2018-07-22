@@ -6,14 +6,23 @@ SQF Language support for VS Code
 
 * Full SQF language syntax
 * Preprocessor commands
+
 ![Preprocessor commands](/images/preprocessor.png)
+
 * Highlight deprecated commands/functions and invalid statements
+
 ![Highlight deprecated commands/functions and invalid statements](/images/errors.png)
+
 * Highlight identifiers reserved by developers and most popular mods (Such as [ACE](https://github.com/acemod/ACE3), [CBA A3](https://github.com/CBATeam/CBA_A3), [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio))
+
 ![Highlight identifiers reserved by developers and most popular mods](/images/reserved_identifiers.png)
+
 * Structured text attributes, escape characters and placeholders [Wiki](https://community.bistudio.com/wiki/Structured_Text)
+
 ![Structured text attributes, escape characters and placeholders](/images/structured_text.png)
+
 * Dark, Light and High Contrast (Black) themes
+
 ![Dark, Light and High Contrast (Black) themes](/images/themes.png)
 
 ## Supported products:
