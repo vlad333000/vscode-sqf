@@ -1,6 +1,6 @@
 # vscode-sqf
 
-SQF Language support for VS Code
+[SQF](https://community.bistudio.com/wiki/SQF_syntax) Language support for VS Code
 
 ## Features
 
