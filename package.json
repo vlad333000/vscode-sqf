@@ -2,7 +2,7 @@
     "name": "sqf",
     "displayName": "SQF Language",
     "description": "SQF Language support for VS Code",
-    "version": "0.5.1",
+    "version": "0.6.0",
     "publisher": "vlad333000",
     "license": "GPL-3.0-or-later",
     "homepage": "https://github.com/vlad333000/vscode-sqf/blob/master/README.md",
