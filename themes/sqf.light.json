@@ -1,22 +1,29 @@
 {
 	"$schema": "vscode://schemas/color-theme",
-	"name": "SQF (Light)",
+    "name": "SQF (Light)",
+    "include": "./light_plus.json",
 	"tokenColors": [
         {
-            "name": "Comments",
+            "name": "[SQF]Comments",
             "scope": [
                 "punctuation.definition.comment.block.begin.sqf",
                 "punctuation.definition.comment.block.end.sqf",
                 "punctuation.definition.comment.line.double-slash.sqf",
                 "comment.block.sqf",
-                "comment.line.double-slash.sqf"
+                "comment.line.double-slash.sqf",
+
+                "punctuation.definition.comment.block.begin.arma-cfg",
+                "punctuation.definition.comment.block.end.arma-cfg",
+                "punctuation.definition.comment.line.double-slash.arma-cfg",
+                "comment.block.arma-cfg",
+                "comment.line.double-slash.arma-cfg"
             ],
             "settings": {
                 "foreground": "#008000"
             }
         },
         {
-            "name": "Preprocessor",
+            "name": "[SQF]Preprocessor",
             "scope": [
                 "punctuation.definition.preprocessor.sqf",
                 "punctuation.separator.continuation.sqf",
@@ -24,14 +31,23 @@
                 "keyword.other.preprocessor.cat.sqf",
                 "keyword.other.preprocessor.str.sqf",
                 "keyword.other.preprocessor.line.sqf",
-                "keyword.other.preprocessor.file.sqf"
+                "keyword.other.preprocessor.file.sqf",
+
+                "punctuation.definition.preprocessor.arma-cfg",
+                "punctuation.separator.continuation.arma-cfg",
+                "keyword.other.preprocessor.arma-cfg",
+                "keyword.other.preprocessor.cat.arma-cfg",
+                "keyword.other.preprocessor.str.arma-cfg",
+                "keyword.other.preprocessor.line.arma-cfg",
+                "keyword.other.preprocessor.file.arma-cfg",
+                "keyword.other.class.arma-cfg"
             ],
             "settings": {
                 "foreground": "#AF00DB"
             }
         },
         {
-            "name": "Strings",
+            "name": "[SQF]Strings",
             "scope": [
                 "punctuation.definition.string.quoted.double.begin.sqf",
                 "punctuation.definition.string.quoted.double.end.sqf",
@@ -41,14 +57,24 @@
                 "punctuation.definition.string.quoted.other.end.sqf",
                 "string.quoted.double.sqf",
                 "string.quoted.single.sqf",
-                "string.quoted.other.sqf"
+                "string.quoted.other.sqf",
+
+                "punctuation.definition.string.quoted.double.begin.arma-cfg",
+                "punctuation.definition.string.quoted.double.end.arma-cfg",
+                "punctuation.definition.string.quoted.single.begin.arma-cfg",
+                "punctuation.definition.string.quoted.single.end.arma-cfg",
+                "punctuation.definition.string.quoted.other.begin.arma-cfg",
+                "punctuation.definition.string.quoted.other.end.arma-cfg",
+                "string.quoted.double.arma-cfg",
+                "string.quoted.single.arma-cfg",
+                "string.quoted.other.arma-cfg"
             ],
             "settings": {
                 "foreground": "#A31515"
             }
         },
         {
-            "name": "Punctuation",
+            "name": "[SQF]Punctuation",
             "scope": [
                 "punctuation.terminator.sqf",
                 "punctuation.separator.sqf",
@@ -57,46 +83,59 @@
                 "punctuation.section.array.begin.sqf",
                 "punctuation.section.array.end.sqf",
                 "punctuation.section.group.begin.sqf",
-                "punctuation.section.group.end.sqf"
+                "punctuation.section.group.end.sqf",
+
+                "punctuation.terminator.arma-cfg",
+                "punctuation.separator.arma-cfg",
+                "punctuation.section.block.begin.arma-cfg",
+                "punctuation.section.block.end.arma-cfg",
+                "punctuation.section.array.begin.arna-cfg",
+                "punctuation.section.array.end.arna-cfg"
             ],
             "settings": {
                 "foreground": "#000000"
             }
         },
         {
-            "name": "Public variables",
+            "name": "[SQF]Public variables",
             "scope": [
-                "variable.name.public.sqf"
+                "variable.name.public.sqf",
+
+                "entity.name.class.arma-cfg"
             ],
             "settings": {
                 "foreground": "#FFA137"
             }
         },
         {
-            "name": "Private variables",
+            "name": "[SQF]Private variables",
             "scope": [
-                "variable.name.private.sqf"
+                "variable.name.private.sqf",
+
+                "entity.name.class.base.arma-cfg"
             ],
             "settings": {
                 "foreground": "#795E26"
             }
         },
         {
-            "name": "Operators",
+            "name": "[SQF]Operators",
             "scope": [
                 "keyword.operator.sqf",
                 "keyword.operator.arithmetic.sqf",
                 "keyword.operator.logical.sqf",
                 "keyword.operator.comparision.sqf",
                 "keyword.operator.assignment.sqf",
-                "keyword.operator.word.sqf"
+                "keyword.operator.word.sqf",
+
+                "keyword.operator.assignment.arma-cfg"
             ],
             "settings": {
                 "foreground": "#000000"
             }
         },
         {
-            "name": "Operators (Word)",
+            "name": "[SQF]Operators (Word)",
             "scope": [
                 "keyword.operator.word.sqf"
             ],
@@ -105,7 +144,7 @@
             }
         },
         {
-            "name": "BIS variables and functions",
+            "name": "[SQF]BIS variables and functions",
             "scope": [
                 "variable.language.function.bis.sqf"
             ],
@@ -114,7 +153,7 @@
             }
         },
         {
-            "name": "Language variables",
+            "name": "[SQF]Language variables",
             "scope": [
                 "variable.language.sqf"
             ],
@@ -123,45 +162,55 @@
             }
         },
         {
-            "name": "Other libraries",
+            "name": "[SQF]Other libraries",
             "scope": [
-                "support.variable"
+                "support.variable",
+
+                "entity.name.property.arma-cfg"
             ],
             "settings": {
                 "foreground": "#1495FF"
             }
         },
         {
-            "name": "Numbers",
+            "name": "[SQF]Numbers",
             "scope": [
                 "constant.numeric.hex.sqf",
-                "constant.numeric.float.sqf"
+                "constant.numeric.float.sqf",
+
+                "constant.numeric.hex.arma-cfg",
+                "constant.numeric.float.arma-cfg"
             ],
             "settings": {
                 "foreground": "#09885A"
             }
         },
         {
-            "name": "Preprocessor macro",
+            "name": "[SQF]Preprocessor macro",
             "scope": [
                 "meta.preprocessor.define.sqf",
-                "meta.preprocessor.define.parameters.sqf"
+                "meta.preprocessor.define.parameters.sqf",
+
+                "meta.preprocessor.define.arma-cfg",
+                "meta.preprocessor.define.parameters.arma-cfg"
             ],
             "settings": {
                 "foreground": "#0000FF"
             }
         },
         {
-            "name": "Preprocessor macro - name",
+            "name": "[SQF]Preprocessor macro - name",
             "scope": [
-                "variable.other.constant.sqf"
+                "variable.other.constant.sqf",
+
+                "variable.other.constant.parameter.arma-cfg"
             ],
             "settings": {
                 "foreground": "#1495FF"
             }
         },
         {
-            "name": "Preprocessor macro - parameter",
+            "name": "[SQF]Preprocessor macro - parameter",
             "scope": [
                 "variable.other.constant.parameter.sqf"
             ],
@@ -170,18 +219,22 @@
             }
         },
         {
-            "name": "Preprocessor macro - punctuation",
+            "name": "[SQF]Preprocessor macro - punctuation",
             "scope": [
                 "punctuation.definition.preprocessor.parameters.begin.sqf",
                 "punctuation.definition.preprocessor.parameters.end.sqf",
-                "punctuation.definition.preprocessor.parameters.separator.sqf"
+                "punctuation.definition.preprocessor.parameters.separator.sqf",
+
+                "punctuation.definition.preprocessor.parameters.begin.arma-cfg",
+                "punctuation.definition.preprocessor.parameters.end.arma-cfg",
+                "punctuation.definition.preprocessor.parameters.separator.arma-cfg"
             ],
             "settings": {
                 "foreground": "#000000"
             }
         },
         {
-            "name": "Errors",
+            "name": "[SQF]Errors",
             "scope": [
                 "invalid.illegal.missing-semicolon.sqf",
                 "invalid.illegal.missing-coma.sqf",
@@ -189,14 +242,21 @@
                 "invalid.illegal.wrong-preprocessor-command.sqf",
                 "invalid.illegal.wrong-character-reference.sqf",
                 "invalid.illegal.wrong-format.sqf",
-                "invalid.illegal.wrong-format-attribute.sqf"
+                "invalid.illegal.wrong-format-attribute.sqf",
+
+                "invalid.illegal.missing-semicolon.arma-cfg",
+                "invalid.illegal.missing-coma.arma-cfg",
+                "invalid.illegal.missing-number.arma-cfg",
+                "invalid.illegal.missing-string.arma-cfg",
+                "invalid.illegal.missing-array.arma-cfg",
+                "invalid.illegal.wrong-preprocessor-command.sqf"
             ],
             "settings": {
                 "foreground": "#CD3131"
             }
         },
         {
-            "name": "Deprecated",
+            "name": "[SQF]Deprecated",
             "scope": [
                 "invalid.deprecated.operator.word.sqf",
                 "invalid.deprecated.operator.word.sqs-only.sqf",
@@ -209,21 +269,24 @@
             }
         },
         {
-            "name": "Character escape",
+            "name": "[SQF]Character escape",
             "scope": [
                 "constant.character.escape.quote.double.sqf",
                 "constant.character.escape.quote.single.sqf",
                 "constant.character.escape.format-insert.sqf",
                 "constant.character.escape.character-reference.word.sqf",
                 "constant.character.escape.character-reference.numeric.sqf",
-                "constant.character.escape.linebreak.sqf"
+                "constant.character.escape.linebreak.sqf",
+
+                "constant.character.escape.quote.double.arma-cfg",
+                "constant.character.escape.quote.single.arma-cfg"
             ],
             "settings": {
                 "foreground": "#86641b"
             }
         },
         {
-            "name": "Format",
+            "name": "[SQF]Format",
             "scope": [
                 "constant.other.format.img.begin.sqf",
                 "constant.other.format.img.end.sqf",

@@ -103,13 +103,13 @@
                             "name": "entity.name.class.base.arma-cfg"
                         },
                         "5": {
-                            "name": "puncuation.definition.section.block.begin.arma-cfg"
+                            "name": "puncuation.section.block.begin.arma-cfg"
                         }
                     },
                     "end": "\\}",
                     "endCaptures": {
                         "0": {
-                            "name": "punctuation.definition.section.block.end.arma-cfg"
+                            "name": "punctuation.section.block.end.arma-cfg"
                         }
                     },
                     "name": "meta.class.arma-cfg",
@@ -325,13 +325,13 @@
                     "begin": "\\{",
                     "beginCaptures": {
                         "0": {
-                            "name": "punctuation.definition.array.begin.arma-cfg"
+                            "name": "punctuation.section.array.begin.arma-cfg"
                         }
                     },
                     "end": "\\}",
                     "endCaptures": {
                         "0": {
-                            "name": "punctuation.definition.array.end.arma-cfg"
+                            "name": "punctuation.section.array.end.arma-cfg"
                         }
                     },
                     "name": "meta.array.arma-cfg",
