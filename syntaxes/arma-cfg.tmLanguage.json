@@ -1,0 +1,595 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Arma config",
+    "scopeName": "source.arma-cfg",
+    "version": "1.0.0",
+	"patterns": [
+        {
+            "include": "#preprocessor-include"
+        },
+        {
+            "include": "#preprocessor-define"
+        },
+        {
+            "include": "#preprocessor-undef"
+        },
+        {
+            "include": "#preprocessor-if"
+        },
+        {
+            "include": "#preprocessor-else"
+        },
+        {
+            "include": "#preprocessor-endif"
+        },
+        {
+            "include": "#preprocessor-error"
+        },
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#property"
+        },
+        {
+            "include": "#class"
+        },
+        {
+            "match": ";",
+            "name": "punctuation.terminator.arma-cfg"
+        },
+        {
+            "match": "\\S",
+            "name": "invalid.illegal.missing-semicolon.arma-cfg"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "\\/\\*",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.block.begin.arma-cfg"
+                        }
+                    },
+                    "end": "\\*\\/",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.block.end.arma-cfg"
+                        }
+                    },
+                    "name": "comment.block.arma-cfg"
+                },
+                {
+                    "match": "(?m)(\\/\\/).*\\n?",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.comment.line.double-slash.arma-cfg"
+                        }
+                    },
+                    "name": "comment.line.double-slash.arma-cfg"
+                }
+            ]
+        },
+        "property": {
+            "patterns": [
+                {
+                    "include": "#property-number"
+                },
+                {
+                    "include": "#property-string"
+                },
+                {
+                    "include": "#property-array"
+                }
+            ]
+        },
+        "class": {
+            "patterns": [
+                {
+                    "begin": "(class)\\s+(\\w+)\\s*(?:(:)\\s*(\\w+)\\s*)?(\\{)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.other.class.arma-cfg"
+                        },
+                        "2": {
+                            "name": "entity.name.class.arma-cfg"
+                        },
+                        "3": {
+                            "name": "punctuation.definition.base-class.arma-cfg"
+                        },
+                        "4": {
+                            "name": "entity.name.class.base.arma-cfg"
+                        },
+                        "5": {
+                            "name": "puncuation.definition.section.block.begin.arma-cfg"
+                        }
+                    },
+                    "end": "\\}",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.section.block.end.arma-cfg"
+                        }
+                    },
+                    "name": "meta.class.arma-cfg",
+                    "patterns": [
+                        {
+                            "include": "#preprocessor-include"
+                        },
+                        {
+                            "include": "#preprocessor-define"
+                        },
+                        {
+                            "include": "#preprocessor-undef"
+                        },
+                        {
+                            "include": "#preprocessor-if"
+                        },
+                        {
+                            "include": "#preprocessor-else"
+                        },
+                        {
+                            "include": "#preprocessor-endif"
+                        },
+                        {
+                            "include": "#preprocessor-error"
+                        },
+                        {
+                            "include": "#comment"
+                        },
+                        {
+                            "include": "#property"
+                        },
+                        {
+                            "include": "#class"
+                        },
+                        {
+                            "match": ";",
+                            "name": "punctuation.terminator.arma-cfg"
+                        },
+                        {
+                            "match": "\\S",
+                            "name": "invalid.illegal.missing-semicolon.arma-cfg"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        "property-number": {
+            "patterns": [
+                {
+                    "begin": "\\b(\\w+)\\s*(=)\\s*(?=\\d|0|\\$|\\.)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.property.arma-cfg"
+                        },
+                        "2": {
+                            "name": "keyword.operator.assignment.arma-cfg"
+                        }
+                    },
+                    "end": "\\s*(;)",
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.terminator.arma-cfg"
+                        }
+                    },
+                    "name": "meta.property.number.arma-cfg",
+                    "patterns": [
+                        {
+                            "include": "#number"
+                        },
+                        {
+                            "match": "\\S",
+                            "name": "invalid.illegal.missign-number.arma-cfg"
+                        }
+                    ]
+                }
+            ]
+        },
+        "property-string": {
+            "patterns": [
+                {
+                    "begin": "\\b(\\w+)\\s*(=)\\s*(?=\"|')",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.property.arma-cfg"
+                        },
+                        "2": {
+                            "name": "keyword.operator.assignment.arma-cfg"
+                        }
+                    },
+                    "end": "\\s*(;)",
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.terminator.arma-cfg"
+                        }
+                    },
+                    "name": "meta.property.string.arma-cfg",
+                    "patterns": [
+                        {
+                            "include": "#string"
+                        },
+                        {
+                            "match": "\\S",
+                            "name": "invalid.illegal.missing-string.arma-cfg"
+                        }
+                    ]
+                }
+            ]
+        },
+        "property-array": {
+            "patterns": [
+                {
+                    "begin": "\\b(\\w+)\\s*(\\[\\s*\\])\\s*(=)\\s*",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.property.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.array.arma-cfg"
+                        },
+                        "3": {
+                            "name": "keyword.operator.assignment.arma-cfg"
+                        },
+                        "4": {
+                            "name": "meta.array.arma-cfg"
+                        }
+                    },
+                    "end": "\\s*(;)",
+                    "endCaptures": {
+                        "1": {
+                            "name": "meta.array.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.terminator.arma-cfg"
+                        }
+                    },
+                    "name": "meta.property.array.arma-cfg",
+                    "patterns": [
+                        {
+                            "include": "#array"
+                        },
+                        {
+                            "match": "\\S",
+                            "name": "invalid.illegal.missng-array.arma-cfg"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        "number": {
+            "patterns": [
+                {
+                    "match": "(?:0[xX]|\\$)[0-9A-Fa-f]+",
+                    "name": "constant.numeric.hex.arma-cfg"
+                },
+                {
+                    "match": "(?:\\d+\\.|(?:\\d*\\.)?\\d+)(?:[eE][+-]?\\d+)?",
+                    "name": "constant.numeric.float.arma-cfg"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.quoted.double.begin.arma-cfg"
+                        }
+                    },
+                    "end": "\"(?!\")",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.quoted.double.end.arma-cfg"
+                        }
+                    },
+                    "name": "string.quoted.double.arma-cfg",
+                    "patterns": [
+                        {
+                            "match": "\"\"",
+                            "name": "constant.character.escape.quote.double.arma-cfg"
+                        }
+                    ]
+                },
+                {
+                    "begin": "'",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.quoted.single.begin.arma-cfg"
+                        }
+                    },
+                    "end": "'(?!')",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.quoted.single.end.arma-cfg"
+                        }
+                    },
+                    "name": "string.quoted.single.arma-cfg",
+                    "patterns": [
+                        {
+                            "match": "''",
+                            "name": "constant.character.escape.quote.single.arma-cfg"
+                        }
+                    ]
+                }
+            ]
+        },
+        "array": {
+            "patterns": [
+                {
+                    "begin": "\\{",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.array.begin.arma-cfg"
+                        }
+                    },
+                    "end": "\\}",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.array.end.arma-cfg"
+                        }
+                    },
+                    "name": "meta.array.arma-cfg",
+                    "patterns": [
+                        {
+                            "include": "#comment"
+                        },
+                        {
+                            "include": "#number"
+                        },
+                        {
+                            "include": "#string"
+                        },
+                        {
+                            "include": "#array"
+                        },
+                        {
+                            "match": ",",
+                            "name": "punctuation.separator.arma-cfg"
+                        },
+                        {
+                            "match": "\\S",
+                            "name": "invalid.illegal.missing-coma.arma-cfg"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        "preprocessor-include": {
+            "patterns": [
+                {
+                    "match": "^\\s*((#)include)\\s+((\")[^\"]*(\"))",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.preprocessor.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.preprocessor.arma-cfg"
+                        },
+                        "3": {
+                            "name": "string.quoted.double.arma-cfg"
+                        },
+                        "4": {
+                            "name": "punctuation.definition.string.begin.arma-cfg"
+                        },
+                        "5": {
+                            "name": "punctuation.definition.string.end.arma-cfg"
+                        }
+                    },
+                    "name": "meta.preprocessor.include.arma-cfg"
+                },
+                {
+                    "match": "^\\s*((#)include)\\s+((<)[^<>]*(>))",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.preprocessor.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.preprocessor.arma-cfg"
+                        },
+                        "3": {
+                            "name": "string.quoted.other.arma-cfg"
+                        },
+                        "4": {
+                            "name": "punctuation.definition.string.quoted.other.begin.arma-cfg"
+                        },
+                        "5": {
+                            "name": "punctuation.definition.string.quoted.other.end.arma-cfg"
+                        }
+                    },
+                    "name": "meta.preprocessor.include.arma-cfg"
+                }
+            ]
+        },
+        "preprocessor-define": {
+            "patterns": [
+                {
+                    "begin": "^\\s*((#)define)\\s+(\\w+)(?=\\(|\\b)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.other.preprocessor.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.preprocessor.arma-cfg"
+                        },
+                        "3": {
+                            "name": "variable.other.constant.arma-cfg"
+                        }
+                    },
+                    "end": "(\\n|(?=//))",
+                    "name": "meta.preprocessor.define.arma-cfg",
+                    "patterns": [
+                        {
+                            "begin": "\\G\\(",
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.preprocessor.parameters.begin.arma-cfg"
+                                }
+                            },
+                            "end": "\\)",
+                            "endCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.preprocessor.parameters.end.arma-cfg"
+                                }
+                            },
+                            "name": "meta.preprocessor.define.parameters.arma-cfg",
+                            "patterns": [
+                                {
+                                    "match": "\\b\\w+\\b",
+                                    "name": "variable.other.constant.parameter.arma-cfg"
+                                },
+                                {
+                                    "match": ",",
+                                    "name": "punctuation.definition.preprocessor.parameters.separator.arma-cfg"
+                                },
+                                {
+                                    "match": "\\S",
+                                    "name": "invalid.illegal.missing-coma.arma-cfg"
+                                }
+                            ]
+                        },
+                        {
+                            "match": "\\\\\\n",
+                            "name": "punctuation.separator.continuation.arma-cfg"
+                        },
+                        {
+                            "include": "#preprocessor-cat"
+                        },
+                        {
+                            "include": "#preprocessor-str"
+                        },
+                        {
+                            "include": "#preprocessor-file"
+                        },
+                        {
+                            "include": "#preprocessor-line"
+                        }
+                    ]
+                }
+            ]
+        },
+        "preprocessor-undef": {
+            "patterns": [
+                {
+                    "match": "^\\s*((#)undef)\\s+(\\w+)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.preprocessor.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.preprocessor.arma-cfg"
+                        },
+                        "3": {
+                            "name": "variable.other.constant.arma-cfg"
+                        }
+                    },
+                    "name": "meta.preprocessor.undef.arma-cfg"
+                }
+            ]
+        },
+        "preprocessor-if": {
+            "patterns": [
+                {
+                    "match": "(?m)^\\s*((#)ifn?def)\\s+(\\w+)\\b",
+                    "captures": {
+                        "0": {
+                            "name": "meta.preprocessor.$1.arma-cfg"
+                        },
+                        "1": {
+                            "name": "keyword.other.preprocessor.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.preprocessor.arma-cfg"
+                        },
+                        "3": {
+                            "name": "variable.other.constant.arma-cfg"
+                        }
+                    }
+                }
+            ]
+        },
+        "preprocessor-else": {
+            "patterns": [
+                {
+                    "match": "^\\s*((#)else)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.preprocessor.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.preprocessor.arma-cfg"
+                        }
+                    },
+                    "name": "meta.preprocessor.else.arma-cfg"
+                }
+            ]
+        },
+        "preprocessor-endif": {
+            "patterns": [
+                {
+                    "match": "^\\s*((#)endif)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.preprocessor.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.preprocessor.arma-cfg"
+                        }
+                    },
+                    "name": "meta.preprocessor.endif.arma-cfg"
+                }
+            ]
+        },
+        "preprocessor-error": {
+            "patterns": [
+                {
+                    "match": "^\\s*(#.*)",
+                    "captures": {
+                        "1": {
+                            "name": "invalid.illegal.wrong-preprocessor-command.arma-cfg"
+                        }
+                    },
+                    "name": "meta.preprocessor.arma-cfg"
+                }
+            ]
+        },
+        "preprocessor-cat": {
+            "patterns": [
+                {
+                    "match": "##",
+                    "name": "keyword.other.preprocessor.cat.arma-cfg"
+                }
+            ]
+        },
+        "preprocessor-str": {
+            "patterns": [
+                {
+                    "match": "#",
+                    "name": "keyword.other.preprocessor.str.arma-cfg"
+                }
+            ]
+        },
+        "preprocessor-file": {
+            "patterns": [
+                {
+                    "match": "\\b__FILE__\\b",
+                    "name": "keyword.other.preprocessor.file.arma-cfg"
+                }
+            ]
+        },
+        "preprocessor-line": {
+            "patterns": [
+                {
+                    "match": "\\b__LINE__\\b",
+                    "name": "keyword.other.preprocessor.line.arma-cfg"
+                }
+            ]
+        }
+    }
+}

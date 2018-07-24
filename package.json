@@ -40,6 +40,23 @@
                     "Status Quo Function"
                 ],
                 "configuration": "./configs/sqf.language-configuration.json"
+            },
+            {
+                "id": "arma-cfg",
+                "extensions": [
+                    ".hpp",
+                    ".inc"
+                ],
+                "filenames": [
+                    "config.cpp",
+                    "extension.ext",
+                    "missing.sqm"
+                ],
+                "aliases": [
+                    "arma-cfg",
+                    "arma config"
+                ],
+                "configuration": "./configs/arma-cfg.language-configuration.json"
             }
         ],
         "grammars": [
@@ -47,12 +64,21 @@
                 "language": "sqf",
                 "scopeName": "source.sqf",
                 "path": "./syntaxes/sqf.tmLanguage.json"
+            },
+            {
+                "language": "arma-cfg",
+                "scopeName": "source.arma-cfg",
+                "path": "./syntaxes/arma-cfg.tmLanguage.json"
             }
         ],
         "snippets": [
             {
                 "language": "sqf",
                 "path": "./snippets/sqf.json"
+            },
+            {
+                "language": "arma-cfg",
+                "path": "./snippets/arma-cfg.json"
             }
         ],
         "themes": [
