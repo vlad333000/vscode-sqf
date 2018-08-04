@@ -1,5 +1,8 @@
 # SQF for VS Code change Log
 
+## 0.7.1
+* Added: v1.84 scripting command and BIS variables
+
 ## 0.7.0
 * Added: delete command to arma-cfg
 * Added: __EVAL and __EXEC preprocessor commands to arma-cfg
