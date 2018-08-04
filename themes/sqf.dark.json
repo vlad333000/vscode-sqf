@@ -4,50 +4,19 @@
     "include": "./dark_plus.json",
 	"tokenColors": [
         {
-            "name": "[SQF]Comments",
-            "scope": [
-                "punctuation.definition.comment.block.begin.sqf",
-                "punctuation.definition.comment.block.end.sqf",
-                "punctuation.definition.comment.line.double-slash.sqf",
-                "comment.block.sqf",
-                "comment.line.double-slash.sqf",
-
-                "punctuation.definition.comment.block.begin.arma-cfg",
-                "punctuation.definition.comment.block.end.arma-cfg",
-                "punctuation.definition.comment.line.double-slash.arma-cfg",
-                "comment.block.arma-cfg",
-                "comment.line.double-slash.arma-cfg"
-            ],
-            "settings": {
-                "foreground": "#608B4E"
-            }
-        },
-        {
-            "name": "[SQF]Preprocessor",
+            "name": "[sqf] Preprocessor",
             "scope": [
                 "punctuation.definition.preprocessor.sqf",
-                "punctuation.separator.continuation.sqf",
                 "keyword.other.preprocessor.sqf",
-                "keyword.other.preprocessor.cat.sqf",
-                "keyword.other.preprocessor.str.sqf",
                 "keyword.other.preprocessor.line.sqf",
-                "keyword.other.preprocessor.file.sqf",
-
-                "punctuation.definition.preprocessor.arma-cfg",
-                "punctuation.separator.continuation.arma-cfg",
-                "keyword.other.preprocessor.arma-cfg",
-                "keyword.other.preprocessor.cat.arma-cfg",
-                "keyword.other.preprocessor.str.arma-cfg",
-                "keyword.other.preprocessor.line.arma-cfg",
-                "keyword.other.preprocessor.file.arma-cfg",
-                "keyword.other.class.arma-cfg"
+                "keyword.other.preprocessor.file.sqf"
             ],
             "settings": {
                 "foreground": "#C586C0"
             }
         },
         {
-            "name": "[SQF]Strings",
+            "name": "[sqf] Strings",
             "scope": [
                 "punctuation.definition.string.quoted.double.begin.sqf",
                 "punctuation.definition.string.quoted.double.end.sqf",
@@ -57,84 +26,83 @@
                 "punctuation.definition.string.quoted.other.end.sqf",
                 "string.quoted.double.sqf",
                 "string.quoted.single.sqf",
-                "string.quoted.other.sqf",
-
-                "punctuation.definition.string.quoted.double.begin.arma-cfg",
-                "punctuation.definition.string.quoted.double.end.arma-cfg",
-                "punctuation.definition.string.quoted.single.begin.arma-cfg",
-                "punctuation.definition.string.quoted.single.end.arma-cfg",
-                "punctuation.definition.string.quoted.other.begin.arma-cfg",
-                "punctuation.definition.string.quoted.other.end.arma-cfg",
-                "string.quoted.double.arma-cfg",
-                "string.quoted.single.arma-cfg",
-                "string.quoted.other.arma-cfg"
+                "string.quoted.other.sqf"
             ],
             "settings": {
                 "foreground": "#CE9178"
             }
         },
         {
-            "name": "[SQF]Punctuation",
+            "name": "[sqf] Punctuation",
             "scope": [
                 "punctuation.terminator.sqf",
                 "punctuation.separator.sqf",
-                "punctuation.section.block.begin.sqf",
-                "punctuation.section.block.end.sqf",
-                "punctuation.section.array.begin.sqf",
-                "punctuation.section.array.end.sqf",
-                "punctuation.section.group.begin.sqf",
-                "punctuation.section.group.end.sqf",
-
-                "punctuation.terminator.arma-cfg",
-                "punctuation.separator.arma-cfg",
-                "punctuation.section.block.begin.arma-cfg",
-                "punctuation.section.block.end.arma-cfg",
-                "punctuation.section.array.begin.arna-cfg",
-                "punctuation.section.array.end.arna-cfg"
+                "punctuation.separator.continuation.sqf",
+                "punctuation.definition.code.begin.sqf",
+                "punctuation.definition.code.end.sqf",
+                "punctuation.definition.array.begin.sqf",
+                "punctuation.definition.array.end.sqf",
+                "punctuation.definition.expression.begin.sqf",
+                "punctuation.definition.expression.end.sqf",
+                "punctuation.definition.parameters.begin.sqf",
+                "punctuation.definition.parameters.end.sqf"
             ],
             "settings": {
                 "foreground": "#D4D4D4"
             }
         },
         {
-            "name": "[SQF]Public variables",
+            "name": "[sqf] Variables (Public)",
             "scope": [
-                "variable.name.public.sqf",
-
-                "entity.name.class.arma-cfg"
+                "variable.name.public.sqf"
             ],
             "settings": {
-                "foreground": "#FA9A2C"
+                "foreground": "#4EC9B0"
             }
         },
         {
-            "name": "[SQF]Private variables",
+            "name": "[sqf] Variables (Private)",
             "scope": [
-                "variable.name.private.sqf",
-
-                "entity.name.class.base.arma-cfg"
+                "variable.name.private.sqf"
+            ],
+            "settings": {
+                "foreground": "#9CDCFE"
+            }
+        },
+        {
+            "name": "[sqf] Variables (Language)",
+            "scope": [
+                "variable.language.sqf",
+                "variable.language.bis.sqf"
+            ],
+            "settings": {
+                "foreground": "#569CD6"
+            }
+        },
+        {
+            "name": "[sqf] Variables (Reserved)",
+            "scope": [
+                "support.variable"
             ],
             "settings": {
                 "foreground": "#D7BA7D"
             }
         },
         {
-            "name": "[SQF]Operators",
+            "name": "[sqf] Operators",
             "scope": [
                 "keyword.operator.sqf",
                 "keyword.operator.arithmetic.sqf",
                 "keyword.operator.logical.sqf",
                 "keyword.operator.comparision.sqf",
-                "keyword.operator.assignment.sqf",
-
-                "keyword.operator.assignment.arma-cfg"
+                "keyword.operator.assignment.sqf"
             ],
             "settings": {
                 "foreground": "#D4D4D4"
             }
         },
         {
-            "name": "[SQF]Operators (Word)",
+            "name": "[sqf] Operators (Word)",
             "scope": [
                 "keyword.operator.word.sqf"
             ],
@@ -143,151 +111,50 @@
             }
         },
         {
-            "name": "[SQF]BIS variables and functions",
-            "scope": [
-                "variable.language.function.bis.sqf"
-            ],
-            "settings": {
-                "foreground": "#569CD6"
-            }
-        },
-        {
-            "name": "[SQF]Language variables",
-            "scope": [
-                "variable.language.sqf"
-            ],
-            "settings": {
-                "foreground": "#569CD6"
-            }
-        },
-        {
-            "name": "[SQF]Other libraries",
-            "scope": [
-                "support.variable",
-
-                "entity.name.property.arma-cfg"
-            ],
-            "settings": {
-                "foreground": "#9CDCFE"
-            }
-        },
-        {
-            "name": "[SQF]Numbers",
+            "name": "[sqf] Constants (Numeric)",
             "scope": [
                 "constant.numeric.hex.sqf",
-                "constant.numeric.float.sqf",
-
-                "constant.numeric.hex.arma-cfg",
-                "constant.numeric.float.arma-cfg"
+                "constant.numeric.float.sqf"
             ],
             "settings": {
                 "foreground": "#B5CEA8"
             }
         },
         {
-            "name": "[SQF]Preprocessor macro",
+            "name": "[sqf] Macros",
             "scope": [
-                "meta.preprocessor.define.sqf",
-                "meta.preprocessor.define.parameters.sqf",
-
-                "meta.preprocessor.define.arma-cfg",
-                "meta.preprocessor.define.parameters.arma-cfg"
+                "entity.name.macro.sqf",
+                "entity.name.macro.parameter.sqf"
+            ],
+            "settings": {
+                "foreground": "#D7BA7D"
+            }
+        },
+        {
+            "name": "[sqf] Macros (Expression)",
+            "scope": [
+                "meta.preprocessor.define.sqf"
             ],
             "settings": {
                 "foreground": "#569CD6"
             }
         },
         {
-            "name": "[SQF]Preprocessor macro - name",
-            "scope": [
-                "variable.other.constant.sqf",
-
-                "variable.other.constant.arma-cfg"
-            ],
-            "settings": {
-                "foreground": "#9CDCFE"
-            }
-        },
-        {
-            "name": "[SQF]Preprocessor macro - parameter",
-            "scope": [
-                "variable.other.constant.parameter.sqf",
-
-                "variable.other.constant.parameter.arma-cfg"
-            ],
-            "settings": {
-                "foreground": "#D7BA7D"
-            }
-        },
-        {
-            "name": "[SQF]Preprocessor macro - punctuation",
-            "scope": [
-                "punctuation.definition.preprocessor.parameters.begin.sqf",
-                "punctuation.definition.preprocessor.parameters.end.sqf",
-                "punctuation.definition.preprocessor.parameters.separator.sqf",
-
-                "punctuation.definition.preprocessor.parameters.begin.arma-cfg",
-                "punctuation.definition.preprocessor.parameters.end.arma-cfg",
-                "punctuation.definition.preprocessor.parameters.separator.arma-cfg"
-            ],
-            "settings": {
-                "foreground": "#D4D4D4"
-            }
-        },
-        {
-            "name": "[SQF]Errors",
-            "scope": [
-                "invalid.illegal.missing-semicolon.sqf",
-                "invalid.illegal.missing-coma.sqf",
-                "invalid.illegal.missing-index.sqf",
-                "invalid.illegal.wrong-preprocessor-command.sqf",
-                "invalid.illegal.wrong-character-reference.sqf",
-                "invalid.illegal.wrong-format.sqf",
-                "invalid.illegal.wrong-format-attribute.sqf",
-
-                "invalid.illegal.missing-semicolon.arma-cfg",
-                "invalid.illegal.missing-coma.arma-cfg",
-                "invalid.illegal.missing-number.arma-cfg",
-                "invalid.illegal.missing-string.arma-cfg",
-                "invalid.illegal.missing-array.arma-cfg",
-                "invalid.illegal.wrong-preprocessor-command.sqf"
-            ],
-            "settings": {
-                "foreground": "#F44747"
-            }
-        },
-        {
-            "name": "[SQF]Deprecated",
-            "scope": [
-                "invalid.deprecated.operator.word.sqf",
-                "invalid.deprecated.operator.word.sqs-only.sqf",
-                "invalid.deprecated.operator.word.old-editor.sqf",
-                "invalid.deprecated.operator.word.sqs-is-deprecated.sqf",
-                "invalid.deprecated.function.bis.sqf"
-            ],
-            "settings": {
-                "foreground": "#F44747"
-            }
-        },
-        {
-            "name": "[SQF]Character escape",
+            "name": "[sqf] Escape characters",
             "scope": [
                 "constant.character.escape.quote.double.sqf",
                 "constant.character.escape.quote.single.sqf",
                 "constant.character.escape.format-insert.sqf",
                 "constant.character.escape.character-reference.word.sqf",
                 "constant.character.escape.character-reference.numeric.sqf",
-                "constant.character.escape.linebreak.sqf",
-
-                "constant.character.escape.quote.double.arma-cfg",
-                "constant.character.escape.quote.single.arma-cfg"
+                "constant.character.escape.linebreak.sqf"
             ],
             "settings": {
                 "foreground": "#D7BA7D"
             }
         },
         {
-            "name": "[SQF]Format",
+            "name": "[sqf] Formats",
             "scope": [
                 "constant.other.format.img.begin.sqf",
                 "constant.other.format.img.end.sqf",
@@ -319,6 +186,145 @@
             ],
             "settings": {
                 "foreground": "#D7BA7D"
+            }
+        },
+
+
+
+        {
+            "name": "[arma-cfg] Preprocessor",
+            "scope": [
+                "punctuation.definition.preprocessor.arma-cfg",
+                "keyword.other.preprocessor.arma-cfg",
+                "keyword.other.preprocessor.file.arma-cfg",
+                "keyword.other.preprocessor.line.arma-cfg",
+                "keyword.other.preprocessor.eval.arma-cfg",
+                "keyword.other.preprocessor.exec.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#C586C0"
+            }
+        },
+        {
+            "name": "[arma-cfg] Operators (Word)",
+            "scope": [
+                "keyword.operator.word.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#569CD6"
+            }
+        },
+        {
+            "name": "[arma-cfg] Operators",
+            "scope": [
+                "keyword.operator.inheritance.arma-cfg",
+                "keyword.operator.assignment.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#D4D4D4"
+            }
+        },
+        {
+            "name": "[arma-cfg] Constants (Numeric)",
+            "scope": [
+                "constant.numeric.float.arma-cfg",
+                "constant.numeric.hex.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#B5CEA8"
+            }
+        },
+        {
+            "name": "[arma-cfg] Strings",
+            "scope": [
+                "string.quoted.double.arma-cfg",
+                "string.quoted.other.arma-cfg",
+                "punctuation.definition.string.quoted.double.begin.arma-cfg",
+                "punctuation.definition.string.quoted.double.end.arma-cfg",
+                "punctuation.definition.string.quoted.other.begin.arma-cfg",
+                "punctuation.definition.string.quoted.other.end.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#CE9178"
+            }
+        },
+        {
+            "name": "[arma-cfg] Strings (Localized)",
+            "scope": [
+                "string.other.localized.arma-cfg",
+                "keyword.operator.localize.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#D7BA7D"
+            }
+        },
+        {
+            "name": "[arma-cfg] Escape characters",
+            "scope": [
+                "constant.character.escape.quote.double.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#D7BA7D"
+            }
+        },
+        {
+            "name": "[arma-cfg] Punctuation",
+            "scope": [
+                "punctuation.terminator.arma-cfg",
+                "punctuation.separator.arma-cfg",
+                "punctuation.separator.continuation.arma-cfg",
+                "punctuation.definition.array.arma-cfg",
+                "punctuation.definition.parameters.begin.arma-cfg",
+                "punctuation.definition.parameters.end.arma-cfg",
+                "punctuation.definition.array.begin.arma-cfg",
+                "punctuation.definition.array.end.arma-cfg",
+                "punctuation.definition.class.definition.begin.arma-cfg",
+                "punctuation.definition.class.definition.end.arma-cfg",
+                "punctuation.definition.expression.begin.arma-cfg",
+                "punctuation.definition.expression.end.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#D4D4D4"
+            }
+        },
+        {
+            "name": "[arma-cfg] Class",
+            "scope": [
+                "entity.name.class.arma-cfg",
+                "entity.name.class.inherited.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#4EC9B0"
+            }
+        },
+        {
+            "name": "[arma-cfg] Property",
+            "scope": [
+                "entity.name.property.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#9CDCFE"
+            }
+        },
+        {
+            "name": "[arma-cfg] Macros",
+            "scope": [
+                "entity.name.macro.arma-cfg",
+                "entity.name.macro.parameter.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#D7BA7D"
+            }
+        },
+        {
+            "name": "[arma-cfg] Expressions",
+            "scope": [
+                "meta.preprocessor.eval.exp.arma-cfg",
+                "meta.preprocessor.define.arma-cfg",
+                "meta.property.arma-cfg"
+            ],
+            "settings": {
+                "foreground": "#569CD6"
             }
         }
 	]
