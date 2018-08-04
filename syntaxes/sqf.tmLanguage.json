@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "SQF",
     "scopeName": "source.sqf",
-    "version": "1.0.0",
+    "version": "1.0.1",
 	"patterns": [
         {
             "include": "#statement"

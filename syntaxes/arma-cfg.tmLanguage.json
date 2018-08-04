@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Arma config",
     "scopeName": "source.arma-cfg",
-    "version": "1.0.0",
+    "version": "1.1.0",
 	"patterns": [
         {
             "include": "#preprocessor-include"

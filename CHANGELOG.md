@@ -1,5 +1,12 @@
 # SQF for VS Code change Log
 
+## 0.7.0
+* Added: delete command to arma-cfg
+* Added: __EVAL and __EXEC preprocessor commands to arma-cfg
+* Removed: # and ## preprocessor commands from syntax highlight
+* Changed: many syntax construction for arma-cfg
+* Changed: adjusted dark theme colors (White and HC - WIP)
+
 ## 0.6.1
 * Added: this change log
 * Changed: all themes now inherited from default themes
