@@ -49,8 +49,8 @@
                 ],
                 "filenames": [
                     "config.cpp",
-                    "extension.ext",
-                    "missing.sqm"
+                    "description.ext",
+                    "mission.sqm"
                 ],
                 "aliases": [
                     "arma-cfg",
