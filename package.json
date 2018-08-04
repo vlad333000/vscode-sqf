@@ -1,7 +1,7 @@
 {
     "name": "sqf",
-    "displayName": "SQF Language",
-    "description": "SQF Language support for VS Code",
+    "displayName": "%displayName%",
+    "description": "%description%",
     "version": "0.6.1",
     "publisher": "vlad333000",
     "license": "GPL-3.0-or-later",
