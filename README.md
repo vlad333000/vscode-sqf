@@ -13,10 +13,10 @@
 
 *To enable this syntax highlighting, you need to customize themes following [this instruction](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme). Required textMate spaces:
 ```json
-"variable.name.public.sqf"          // Global variables
-"variable.name.private.sqf"         // Local variables
-"support.variable.<TAG>.sqf"        // Reserved and defined variables (Supported TAGs listed below)
-"support.variable.<TAG>.reserved"   // Reserved variables, but may not exists (Supported TAGs listed below)
+"variable.name.public.sqf"              // Global variables
+"variable.name.private.sqf"             // Local variables
+"support.variable.<TAG>.sqf"            // Reserved and defined variables (Supported TAGs listed below)
+"support.variable.<TAG>.reserved.sqf"   // Reserved variables, but may not exists (Supported TAGs listed below)
 ```
 
 ## Recomended themes customization
