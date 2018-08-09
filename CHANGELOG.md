@@ -1,5 +1,12 @@
 # SQF for VS Code change Log
 
+## 0.8.1
+* Fixed: missing changelog for 0.8.0
+
+## 0.8.0
+* Changed: reworked TextMate scopes and not it works with default themes
+* Removed: SQF-themes (See README.md)
+
 ## 0.7.1
 * Added: v1.84 scripting command and BIS variables
 
