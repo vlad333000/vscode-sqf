@@ -10,6 +10,7 @@
 * Highlight deprecated commands and some invalid statements
 * Highlight identifiers reserved by developers and most popular mods (Such as [ACE](https://github.com/acemod/ACE3), [CBA A3](https://github.com/CBATeam/CBA_A3), [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio)) *
 * The color difference between global and local variables *
+* Snippets library **
 
 *To enable this syntax highlighting, you need to customize themes following [this instruction](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme). Required textMate spaces:
 ```json
@@ -17,6 +18,14 @@
 "variable.name.private.sqf"             // Local variables
 "support.variable.<TAG>.sqf"            // Reserved and defined variables (Supported TAGs listed below)
 "support.variable.<TAG>.reserved.sqf"   // Reserved variables, but may not exists (Supported TAGs listed below)
+```
+
+**Examples:
+```
+xor     >> ((A || B) && !(A && B))
+ifthrow >> if (COND) throw [__FILE__, __LINE__, "exception"]
+setvar  >> namespace setVariable ["TAG_name", value]
+getvar  >> namespace getVariable "TAG_name"
 ```
 
 ## Recomended themes customization
