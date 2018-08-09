@@ -19,8 +19,7 @@
     },
     "categories": [
         "Programming Languages",
-        "Snippets",
-        "Themes"
+        "Snippets"
     ],
     "keywords": [
         "sqf",
@@ -53,8 +52,8 @@
                     "mission.sqm"
                 ],
                 "aliases": [
-                    "arma-cfg",
-                    "arma config"
+                    "Arma config",
+                    "arma-cfg"
                 ],
                 "configuration": "./configs/arma-cfg.language-configuration.json"
             }
@@ -79,26 +78,6 @@
             {
                 "language": "arma-cfg",
                 "path": "./snippets/arma-cfg.json"
-            }
-        ],
-        "themes": [
-            {
-                "id": "SQF-Dark",
-                "label": "[SQF] Dark",
-                "uiTheme": "vs-dark",
-                "path": "./themes/sqf.dark.json"
-            },
-            {
-                "id": "SQF-Light",
-                "label": "[SQF] Light",
-                "uiTheme": "vs",
-                "path": "./themes/sqf.light.json"
-            },
-            {
-                "id": "SQF-High-contrast-black",
-                "label": "[SQF] High Contrast (Black)",
-                "uiTheme": "hc-black",
-                "path": "./themes/sqf.hc.black.json"
             }
         ]
     }
