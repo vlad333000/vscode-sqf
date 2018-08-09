@@ -5,18 +5,18 @@
 ## Features
 
 * Full SQF language syntax
-* [Preprocessor commands](https://community.bistudio.com/wiki/PreProcessor_Commands)
-* Highlight deprecated commands and invalid statements
+* Preprocessor commands [Wiki](https://community.bistudio.com/wiki/PreProcessor_Commands)
 * Highlight structured text attributes, escape characters and placeholders [Wiki](https://community.bistudio.com/wiki/Structured_Text)
-* The color difference between global and local variables *
+* Highlight deprecated commands and some invalid statements
 * Highlight identifiers reserved by developers and most popular mods (Such as [ACE](https://github.com/acemod/ACE3), [CBA A3](https://github.com/CBATeam/CBA_A3), [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio)) *
+* The color difference between global and local variables *
 
 *To enable this syntax highlighting, you need to customize themes following [this instruction](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme). Required textMate spaces:
 ```json
 "variable.name.public.sqf" // Global variables
 "variable.name.private.sqf" // Local variables
-"support.variable.<TAG>.sqf" // Reserved variables and defined (Supported tags listed below in supported products)
-"support.variable.<TAG>.reserved" // Reserved variables, but may not exists (Supported tags listed below in supported products)
+"support.variable.<TAG>.sqf" // Reserved and defined variables (Supported TAGs listed below)
+"support.variable.<TAG>.reserved" // Reserved variables, but may not exists (Supported TAGs listed below)
 ```
 
 ## Recomended themes customization
@@ -144,7 +144,7 @@
 * [ArmA 3 (v1.82 Retail)](https://community.bistudio.com/wiki/Category:Arma_3:_Editing)
   * [Functions](https://community.bistudio.com/wiki/Category:Arma_3:_Functions)
   * [Commands](https://community.bistudio.com/wiki/Category:Scripting_Commands_Arma_3)
-  * Reserved and defined edentifiers:
+  * Reserved and defined identifiers:
   ```
   BIS
   ```
