@@ -1,5 +1,9 @@
 # SQF for VS Code change Log
 
+## 0.9.0
+* Added: v2.06 scripting commands and BIS variables
+* Removed: broken and old scripting commands
+
 ## 0.8.1
 * Fixed: missing changelog for 0.8.0
 

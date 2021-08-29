@@ -1,6 +1,6 @@
 {
     "class": {
-        "prefix": "calss",
+        "prefix": "class",
         "body": [
             "class ${1:name} {",
             "\t$0",
