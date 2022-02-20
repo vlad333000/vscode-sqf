@@ -38,6 +38,9 @@
             "include": "#delete"
         },
         {
+            "include": "#import"
+        },
+        {
             "match": ";",
             "name": "punctuation.terminator.arma-cfg"
         },
@@ -207,6 +210,40 @@
                 }
             ]
         },
+        "import": {
+            "patterns": [
+                {
+                    "match": "(import)\\s+(\\w+)\\s*(?=;)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.import.arma-cfg"
+                        },
+                        "2": {
+                            "name": "entity.name.class.arma-cfg"
+                        }
+                    },
+                    "name": "meta.import.arma-cfg"
+                },
+                {
+                    "match": "(import)\\s+(\\w+)\\s+(from)\\s+(\\w+)\\s*(?=;)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.import.arma-cfg"
+                        },
+                        "2": {
+                            "name": "entity.name.class.arma-cfg"
+                        },
+                        "3": {
+                            "name": "keyword.control.from.arma-cfg"
+                        },
+                        "4": {
+                            "name": "entity.name.class.arma-cfg"
+                        }
+                    },
+                    "name": "meta.import.arma-cfg"
+                }
+            ]
+        },
 
 
 
@@ -315,6 +352,9 @@
                     },
                     "name": "meta.array.arma-cfg",
                     "patterns": [
+                        {
+                            "include": "#comment"
+                        },
                         {
                             "include": "#preprocessor-include"
                         },
@@ -763,7 +803,7 @@
         },
 
 
-    
+
         "preprocessor-eval-exp": {
             "patterns": [
                 {
