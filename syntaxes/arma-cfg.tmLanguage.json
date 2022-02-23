@@ -161,7 +161,7 @@
         "property": {
             "patterns": [
                 {
-                    "begin": "\\b(\\w+)(\\[\\])\\s*(=)",
+                    "begin": "\\b(\\w+)(\\[\\])\\s*(=)\\n*",
                     "beginCaptures": {
                         "1": {
                             "name": "variable.name.property.arma-cfg"
@@ -761,7 +761,7 @@
                             "name": "punctuation.definition.expression.end.arma-cfg"
                         }
                     },
-                    "name": "meta.preprocessor.eval.aram-cfg",
+                    "name": "meta.preprocessor.eval.arma-cfg",
                     "patterns": [
                         {
                             "include": "#preprocessor-eval-exp"
@@ -788,7 +788,7 @@
                             "name": "punctuation.definition.expression.end.arma-cfg"
                         }
                     },
-                    "name": "meta.preprocessor.exec.aram-cfg",
+                    "name": "meta.preprocessor.exec.arma-cfg",
                     "patterns": [
                         {
                             "match": "\\(",
