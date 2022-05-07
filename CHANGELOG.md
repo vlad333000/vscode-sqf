@@ -1,5 +1,20 @@
 # SQF for VS Code change Log
 
+## 0.11.1
+* Fixed: missing BIS variables and function
+* Fixed: missing scripting commands
+* Removed: wrong formats in string (Only valid formats are highlighted)
+* Removed: highlighting for deprecated commands
+* Removed: reserved variables for mods (need something else)
+* Added: new preprocessor macros
+* Added: highlighting for known BIS functions
+* Added: BIN* variables (DLC Contact which avaiable in vanila game)
+* Added: #if preprocessor directive
+* Added: highlighting for engine-controlled macros when used as macro-name in #define and #undef directives
+
+## 0.11.0
+* Added: v2.08 scripting commands
+
 ## 0.9.1
 * Fixed: supported version in readme file
 
