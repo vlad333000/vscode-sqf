@@ -60,8 +60,7 @@
     "if-throw": {
         "prefix": "ifthrow",
         "body": [
-            "if (${1:condition}) throw [__FILE__, __LINE__, \"${2:exception}\"];",
-            "$0"
+            "if (${1:condition}) throw [__FILE__, __LINE__, \"${2:exception}\"];$0"
         ],
         "description": "if (...) throw ...;"
     },
@@ -135,8 +134,7 @@
     "case-same": {
         "prefix": "casesame",
         "body": [
-            "case ${1:value};",
-            "$0"
+            "case ${1:value};$0"
         ],
         "description": "case A;"
     },
@@ -163,16 +161,14 @@
     "variable-set": {
         "prefix": "setvar",
         "body": [
-            "${1:namespace} setVariable [\"${2:TAG}_${3:name}\", ${4:value}];",
-            "$0"
+            "${1:namespace} setVariable [\"${2:TAG}_${3:name}\", ${4:value}];$0"
         ],
         "description": "space setVariable [name, A];"
     },
     "variable-set-share": {
         "prefix": "setvarshare",
         "body": [
-            "${1:namespace} setVariable [\"${2:TAG}_${3:name}\", ${4:value}, ${5:share}];",
-            "$0"
+            "${1:namespace} setVariable [\"${2:TAG}_${3:name}\", ${4:value}, ${5:share}];$0"
         ],
         "description": "space setVariable [name, A, true];"
     },
@@ -195,40 +191,35 @@
     "call": {
         "prefix": "call",
         "body": [
-            "${1:variable} = [$2] call ${3:TAG}_fnc_${4:name};",
-            "$0"
+            "${1:variable} = [$2] call ${3:TAG}_fnc_${4:name};$0"
         ],
         "description": "variable = [] call func"
     },
     "spawn": {
         "prefix": "spawn",
         "body": [
-            "${1:handle} = [$2] spawn ${3:TAG}_fnc_${4:name};",
-            "$0"
+            "${1:handle} = [$2] spawn ${3:TAG}_fnc_${4:name};$0"
         ],
         "description": "handle = [] spawn func;"
     },
     "exec-sqf": {
         "prefix": "execsqf",
         "body": [
-            "${1:handle} = [$2] execVM \"${3:file}.sqf\";",
-            "$0"
+            "${1:handle} = [$2] execVM \"${3:file}.sqf\";$0"
         ],
         "description": "handle = [] execVM file;"
     },
     "exec-fsm": {
         "prefix": "execfsm",
         "body": [
-            "${1:handle} = [$2] execFSM \"${3:file}.fsm\";",
-            "$0"
+            "${1:handle} = [$2] execFSM \"${3:file}.fsm\";$0"
         ],
         "description": "handle = [] execFSM file;"
     },
     "exec-sqs": {
         "prefix": "execsqs",
         "body": [
-            "[$1] exec \"${2:file}.sqs\";",
-            "$0"
+            "[$1] exec \"${2:file}.sqs\";$0"
         ],
         "description": "[] exec file;"
     },
@@ -236,16 +227,14 @@
     "compile": {
         "prefix": "compile",
         "body": [
-            "${1:TAG}_fnc_${2:name} = compile preprocessFileLineNumbers \"${3:file}.sqf\";",
-            "$0"
+            "${1:TAG}_fnc_${2:name} = compile preprocessFileLineNumbers \"${3:file}.sqf\";$0"
         ],
         "description": "Compile function"
     },
     "compile-final": {
         "prefix": "compilefinal",
         "body": [
-            "${1:TAG}_fnc_${2:name} = compileFinal preprocessFileLineNumbers \"${3:file}.sqf\";",
-            "$0"
+            "${1:TAG}_fnc_${2:name} = compileFinal preprocessFileLineNumbers \"${3:file}.sqf\";$0"
         ],
         "description": "Compile function and protect it from overwrite"
     },
@@ -253,16 +242,14 @@
     "log": {
         "prefix": "log",
         "body": [
-            "diag_log formatText [\"%1(%2) [LOG] %3\", __FILE__, __LINE__, \"${1:message}\"];",
-            "$0"
+            "diag_log formatText [\"%1(%2) [LOG] %3\", __FILE__, __LINE__, \"${1:message}\"];$0"
         ],
         "description": "Write message to .rpt-file"
     },
     "warning": {
         "prefix": "warning",
         "body": [
-            "diag_log formatText [\"%1(%2) [WARNING] %3\", __FILE__, __LINE__, \"${1:message}\"];",
-            "$0"
+            "diag_log formatText [\"%1(%2) [WARNING] %3\", __FILE__, __LINE__, \"${1:message}\"];$0"
         ],
         "description": "Write warning to .rpt-file"
     },
@@ -270,8 +257,7 @@
         "prefix": "error",
         "body": [
             "diag_log formatText [\"%1(%2) [ERROR] %3\", __FILE__, __LINE__, \"${1:message}\"];",
-            "throw [__FILE__, __LINE__, \"${1:message}\"];",
-            "$0"
+            "throw [__FILE__, __LINE__, \"${1:message}\"];$0"
         ],
         "description": "Write error to .rpt-file and throw exception"
     },
@@ -281,8 +267,7 @@
             "if !(${1:condition}) then {",
             "\tdiag_log formatText [\"%1(%2) [ERROR] %3\", __FILE__, __LINE__, format [\"Assertion failed: %1\", { ${1:condition}; }]];",
             "\tthrow [__FILE__, __LINE__, format [\"Assertion failed: %1\", { ${1:condition}; }]];",
-            "};",
-            "$0"
+            "};$0"
         ],
         "description": "Check condition and throw exception if false"
     },
@@ -290,24 +275,21 @@
     "return": {
         "prefix": "return",
         "body": [
-            "if (true) exitWith { ${1:value} };",
-            "$0"
+            "if (true) exitWith { ${1:value} };$0"
         ],
         "description": "Return value to parent scope"
     },
     "return-if": {
         "prefix": "returnif",
         "body": [
-            "if (${1:condition}) exitWith { ${2:value} };",
-            "$0"
+            "if (${1:condition}) exitWith { ${2:value} };$0"
         ],
         "description": "Return value to parent scope if condition is true"
     },
     "return-scope": {
         "prefix": "returnscope",
         "body": [
-            "${1:value} breakOut \"${2:scope}\";",
-            "$0"
+            "${1:value} breakOut \"${2:scope}\";$0"
         ],
         "description": "Return value from scope"
     },
@@ -315,16 +297,14 @@
     "increment": {
         "prefix": "inc",
         "body": [
-            "${1:A} = ${1:A} + 1;",
-            "$0"
+            "${1:A} = ${1:A} + 1;$0"
         ],
         "description": "A = A + 1;"
     },
     "decrement": {
         "prefix": "dec",
         "body": [
-            "${1:A} = ${1:A} - 1;",
-            "$0"
+            "${1:A} = ${1:A} - 1;$0"
         ],
         "description": "A = A - 1;"
     },
@@ -332,56 +312,49 @@
     "compound-assignment-add": {
         "prefix": "add=",
         "body": [
-            "${1:A} = ${1:A} + ${2:B};",
-            "$0"
+            "${1:A} = ${1:A} + ${2:B};$0"
         ],
         "description": "A = A + B;"
     },
     "compound-assignment-sub": {
         "prefix": "sub=",
         "body": [
-            "${1:A} = ${1:A} - ${2:B};",
-            "$0"
+            "${1:A} = ${1:A} - ${2:B};$0"
         ],
         "description": "A = A - B;"
     },
     "compound-assignment-mul": {
         "prefix": "mul=",
         "body": [
-            "${1:A} = ${1:A} * ${2:B};",
-            "$0"
+            "${1:A} = ${1:A} * ${2:B};$0"
         ],
         "description": "A = A * B;"
     },
     "compound-assignment-div": {
         "prefix": "div=",
         "body": [
-            "${1:A} = ${1:A} / ${2:B};",
-            "$0"
+            "${1:A} = ${1:A} / ${2:B};$0"
         ],
         "description": "A = A / B;"
     },
     "compound-assignment-pow": {
         "prefix": "pow=",
         "body": [
-            "${1:A} = ${1:A} ^ ${2:B};",
-            "$0"
+            "${1:A} = ${1:A} ^ ${2:B};$0"
         ],
         "description": "A = A ^ B;"
     },
     "compound-assignment-mod": {
         "prefix": "mod=",
         "body": [
-            "${1:A} = ${1:A} % ${2:B};",
-            "$0"
+            "${1:A} = ${1:A} % ${2:B};$0"
         ],
         "description": "A = A % B;"
     },
     "compound-assignment-sqr": {
         "prefix": "sqr=",
         "body": [
-            "${1:A} = ${1:A} ^ 2;",
-            "$0"
+            "${1:A} = ${1:A} ^ 2;$0"
         ],
         "description": "A = A ^ 2;"
     },
@@ -464,8 +437,7 @@
     "include": {
         "prefix": "include",
         "body": [
-            "#include \"${1:FILE}\"",
-            "$0"
+            "#include \"${1:FILE}\"$0"
         ],
         "description": "#include \"FILE\""
     },
@@ -486,8 +458,7 @@
     "undefine": {
         "prefix": "undefine",
         "body": [
-            "#undef ${1:MACRO}",
-            "$0"
+            "#undef ${1:MACRO}$0"
         ],
         "description": "#undef A"
     },
