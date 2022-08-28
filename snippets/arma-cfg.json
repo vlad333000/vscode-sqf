@@ -21,104 +21,91 @@
     "number": {
         "prefix": "number",
         "body": [
-            "${1:name} = ${2:0.0};",
-            "$0"
+            "${1:name} = ${2:0.0};$0"
         ],
         "description": "name = number;"
     },
     "string": {
         "prefix": "string",
         "body": [
-            "${1:name} = \"$2\";",
-            "$0"
+            "${1:name} = \"$2\";$0"
         ],
         "description": "name = \"string\";"
     },
     "array": {
         "prefix": "array",
         "body": [
-            "${1:name}[] = {$2};",
-            "$0"
+            "${1:name}[] = {$2};$0"
         ],
         "description": "name[] = {...};"
     },
     "bool": {
         "prefix": "bool",
         "body": [
-            "${1:name} = ${2:0|1};",
-            "$0"
+            "${1:name} = ${2:0|1};$0"
         ],
         "description": "name = 0|1;"
     },
     "color-rgb": {
         "prefix": "colorrgb",
         "body": [
-            "${1:name}[] = {${2:R}, ${3:G}, ${4:B}};",
-            "$0"
+            "${1:name}[] = {${2:R}, ${3:G}, ${4:B}};$0"
         ],
         "description": "Color in RGB format"
     },
     "color-rgba": {
         "prefix": "colorrgba",
         "body": [
-            "${1:name}[] = {${2:R}, ${3:G}, ${4:B}, ${5:A}};",
-            "$0"
+            "${1:name}[] = {${2:R}, ${3:G}, ${4:B}, ${5:A}};$0"
         ],
         "description": "Color in RGBA format"
     },
     "image-paa": {
         "prefix": "imagepaa",
         "body": [
-            "${1:name} = \"${2:image}.paa\";",
-            "$0"
+            "${1:name} = \"${2:image}.paa\";$0"
         ],
         "description": "Path to image in PAA format"
     },
     "image-jpg": {
         "prefix": "imagejpg",
         "body": [
-            "${1:name} = \"${2:image}.jpg\";",
-            "$0"
+            "${1:name} = \"${2:image}.jpg\";$0"
         ],
         "description": "Path to image in JPG format"
     },
     "image-png": {
         "prefix": "imagepng",
         "body": [
-            "${1:name} = \"${2:image}.png\";",
-            "$0"
+            "${1:name} = \"${2:image}.png\";$0"
         ],
         "description": "Path to image in PNG format"
     },
     "script-sqf": {
         "prefix": "scriptsqf",
         "body": [
-            "${1:name} = \"${2:script}.sqf\";",
-            "$0"
+            "${1:name} = \"${2:script}.sqf\";$0"
         ],
         "description": "Path to SQF-script"
     },
     "script-sqs": {
         "prefix": "scriptsqs",
         "body": [
-            "${1:name} = \"${2:script}.sqs\";",
-            "$0"
+            "${1:name} = \"${2:script}.sqs\";$0"
         ],
         "description": "Path to SQS-script"
     },
     "script-fsm": {
         "prefix": "scriptfsm",
         "body": [
-            "${1:name} = \"${2:script}.fsm\";",
-            "$0"
+            "${1:name} = \"${2:script}.fsm\";$0"
         ],
         "description": "Path to FSM-script"
     },
     "localized": {
         "prefix": "localized",
         "body": [
-            "${1:name} = \"\\$STR_${2:NAME}\";",
-            "$0"
+            "${1:name} = \"\\$STR_${2:NAME}\";$0"
         ],
         "description": "Localized text"
     },
@@ -192,8 +179,7 @@
     "include": {
         "prefix": "include",
         "body": [
-            "#include \"${1:FILE}\"",
-            "$0"
+            "#include \"${1:FILE}\"$0"
         ],
         "description": "#include \"FILE\""
     },
@@ -214,13 +200,19 @@
     "undefine": {
         "prefix": "undefine",
         "body": [
-            "#undef ${1:MACRO}",
-            "$0"
+            "#undef ${1:MACRO}$0"
         ],
         "description": "#undef A"
     },
     "if-defined": {
         "prefix": "ifdef",
+        "body": [
+            "#ifdef ${1:MACRO}$0"
+        ],
+        "description": "#ifdef ..."
+    },
+    "if-defined-block": {
+        "prefix": "ifdefblock",
         "body": [
             "#ifdef ${1:MACRO}",
             "$0",
@@ -228,19 +220,15 @@
         ],
         "description": "#ifdef ... #endif"
     },
-    "if-defined-else": {
-        "prefix": "ifdefelse",
-        "body": [
-            "#ifdef ${1:MACRO}",
-            "$0",
-            "#else",
-            "",
-            "#endif"
-        ],
-        "description": "#ifdef ... #else ... #endif"
-    },
     "if-undefined": {
         "prefix": "ifndef",
+        "body": [
+            "#ifndef ${1:MACRO}$0"
+        ],
+        "description": "#ifndef ..."
+    },
+    "if-undefined-block": {
+        "prefix": "ifndefblock",
         "body": [
             "#ifndef ${1:MACRO}",
             "$0",
@@ -248,15 +236,11 @@
         ],
         "description": "#ifndef ... #endif"
     },
-    "if-undefined-else": {
-        "prefix": "ifndefelse",
+    "if-else": {
+        "prefix": "else",
         "body": [
-            "#ifndef ${1:MACRO}",
-            "$0",
-            "#else",
-            "",
-            "#endif"
+            "#else$0"
         ],
-        "description": "#ifndef ... #else ... #endif"
+        "description": "#else"
     }
 }

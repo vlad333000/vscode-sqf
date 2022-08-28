@@ -1,5 +1,9 @@
 # SQF for VS Code change Log
 
+## 0.12.0
+* Added: v2.10 scripting commands
+* Changed: snippets' bodies
+
 ## 0.11.1
 * Fixed: missing BIS variables and function
 * Fixed: missing scripting commands
