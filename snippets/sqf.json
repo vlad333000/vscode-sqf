@@ -435,35 +435,42 @@
     },
 
     "include": {
-        "prefix": "include",
+        "prefix": "ppinclude",
         "body": [
             "#include \"${1:FILE}\"$0"
         ],
         "description": "#include \"FILE\""
     },
     "define": {
-        "prefix": "define",
+        "prefix": "ppdefine",
         "body": [
             "#define ${1:MACRO} $0"
         ],
         "description": "#define A"
     },
     "define-params": {
-        "prefix": "defineparams",
+        "prefix": "ppdefineparams",
         "body": [
             "#define ${1:MACRO}($2) $0"
         ],
         "description": "#define A(B)"
     },
     "undefine": {
-        "prefix": "undefine",
+        "prefix": "ppundefine",
         "body": [
             "#undef ${1:MACRO}$0"
         ],
         "description": "#undef A"
     },
     "if-defined": {
-        "prefix": "ifdef",
+        "prefix": "ppifdef",
+        "body": [
+            "#ifdef ${1:MACRO}$0"
+        ],
+        "description": "#ifdef ..."
+    },
+    "if-defined-block": {
+        "prefix": "ppifdefblock",
         "body": [
             "#ifdef ${1:MACRO}",
             "$0",
@@ -471,19 +478,15 @@
         ],
         "description": "#ifdef ... #endif"
     },
-    "if-defined-else": {
-        "prefix": "ifdefelse",
-        "body": [
-            "#ifdef ${1:MACRO}",
-            "$0",
-            "#else",
-            "",
-            "#endif"
-        ],
-        "description": "#ifdef ... #else ... #endif"
-    },
     "if-undefined": {
-        "prefix": "ifndef",
+        "prefix": "ppifndef",
+        "body": [
+            "#ifndef ${1:MACRO}$0"
+        ],
+        "description": "#ifndef ..."
+    },
+    "if-undefined-block": {
+        "prefix": "ppifndefblock",
         "body": [
             "#ifndef ${1:MACRO}",
             "$0",
@@ -491,15 +494,11 @@
         ],
         "description": "#ifndef ... #endif"
     },
-    "if-undefined-else": {
-        "prefix": "ifndefelse",
+    "else": {
+        "prefix": "ppelse",
         "body": [
-            "#ifndef ${1:MACRO}",
-            "$0",
-            "#else",
-            "",
-            "#endif"
+            "#else$0"
         ],
-        "description": "#ifndef ... #else ... #endif"
+        "description": "#else"
     }
 }

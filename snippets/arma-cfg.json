@@ -207,25 +207,28 @@
     "if-defined": {
         "prefix": "ifdef",
         "body": [
+            "#ifdef ${1:MACRO}$0"
+        ],
+        "description": "#ifdef ..."
+    },
+    "if-defined-block": {
+        "prefix": "ifdefblock",
+        "body": [
             "#ifdef ${1:MACRO}",
             "$0",
             "#endif"
         ],
         "description": "#ifdef ... #endif"
     },
-    "if-defined-else": {
-        "prefix": "ifdefelse",
-        "body": [
-            "#ifdef ${1:MACRO}",
-            "$0",
-            "#else",
-            "",
-            "#endif"
-        ],
-        "description": "#ifdef ... #else ... #endif"
-    },
     "if-undefined": {
         "prefix": "ifndef",
+        "body": [
+            "#ifndef ${1:MACRO}$0"
+        ],
+        "description": "#ifndef ..."
+    },
+    "if-undefined-block": {
+        "prefix": "ifndefblock",
         "body": [
             "#ifndef ${1:MACRO}",
             "$0",
@@ -233,15 +236,11 @@
         ],
         "description": "#ifndef ... #endif"
     },
-    "if-undefined-else": {
-        "prefix": "ifndefelse",
+    "if-else": {
+        "prefix": "else",
         "body": [
-            "#ifndef ${1:MACRO}",
-            "$0",
-            "#else",
-            "",
-            "#endif"
+            "#else$0"
         ],
-        "description": "#ifndef ... #else ... #endif"
+        "description": "#else"
     }
 }
