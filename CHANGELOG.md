@@ -1,5 +1,8 @@
 # SQF for VS Code change Log
 
+## 0.13.0
+* Added: v2.12 scripting commands
+
 ## 0.12.0
 * Added: v2.10 scripting commands
 * Changed: snippets' bodies
