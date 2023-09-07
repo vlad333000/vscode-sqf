@@ -225,6 +225,24 @@
                     "name": "meta.import.arma-cfg"
                 },
                 {
+                    "match": "(import)\\s+(\\w+)\\s+(as)\\s+(\\w+)\\s*(?=;)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.import.arma-cfg"
+                        },
+                        "2": {
+                            "name": "entity.name.class.arma-cfg"
+                        },
+                        "3": {
+                            "name": "keyword.control.as.arma-cfg"
+                        },
+                        "4": {
+                            "name": "entity.name.class.arma-cfg"
+                        }
+                    },
+                    "name": "meta.import.arma-cfg"
+                },
+                {
                     "match": "(import)\\s+(\\w+)\\s+(from)\\s+(\\w+)\\s*(?=;)",
                     "captures": {
                         "1": {
