@@ -1,5 +1,9 @@
 # SQF for VS Code change Log
 
+## 0.15.0
+
+* Just fix version number
+
 ## 0.13.0
 
 * Added: v2.12 scripting commands
