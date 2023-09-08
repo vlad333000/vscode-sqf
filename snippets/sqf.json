@@ -24,339 +24,342 @@
     "if": {
         "prefix": "if",
         "body": [
-            "if (${1:condition}) then {",
-            "\t$0",
-            "};"
+            "if (${1:condition}) then {${1:true}}$0"
         ],
-        "description": "if (...) then {...};"
+        "description": "if (...) then {...}"
     },
     "if-array": {
         "prefix": "ifarray",
         "body": [
-            "if (${1:condition}) then [{$0}, {}];"
+            "if (${1:condition}) then [{${2:true}}, {${3:false}}]$0"
         ],
-        "description": "if (...) then [{...}, {...}];"
+        "description": "if (...) then [{...}, {...}]"
     },
     "if-else": {
         "prefix": "ifelse",
         "body": [
-            "if (${1:condition}) then {",
-            "\t$0",
-            "} else {",
-            "\t",
-            "};"
+            "if (${1:condition}) then {${2:true}} else {${3:false}}$0"
         ],
-        "description": "if (...) then {...} else {...};"
+        "description": "if (...) then {...} else {...}"
     },
     "if-exit": {
         "prefix": "ifexit",
         "body": [
-            "if (${1:condition}) exitWith {",
-            "\t$0",
-            "};"
+            "if (${1:condition}) exitWith {${2:code}}$0"
         ],
-        "description": "if (...) exitWith {...};"
+        "description": "if (...) exitWith {...}"
+    },
+    "if-return": {
+        "prefix": "ifreturn",
+        "body": [
+            "if (${1:condition}) then {_fnc_scriptName breakOut ${2:value}}$0"
+        ],
+        "description": "if (...) then {return}"
     },
     "if-throw": {
         "prefix": "ifthrow",
         "body": [
-            "if (${1:condition}) throw [__FILE__, __LINE__, \"${2:exception}\"];$0"
+            "if (${1:condition}) throw [__FILE__, __LINE__, \"${2:exception}\"]$0"
         ],
         "description": "if (...) throw ...;"
+    },
+    "else": {
+        "prefix": "else",
+        "body": ["else {${1:false}}$0"],
+        "description": "else {...}"
     },
 
     "for": {
         "prefix": "for",
         "body": [
-            "for \"${1:_i}\" from ${2:A} to ${3:B} do {",
-            "\t$0",
-            "};"
+            "for \"_${1:i}\" from ${2:A} to ${3:B} do {${4:code}}$0"
         ],
-        "description": "for \"_i\" from A to B do {...};"
-    },
-    "for-spec": {
-        "prefix": "forspec",
-        "body": [
-            "for [{ ${1:_i = A} }, { ${2:_i < B} }, { ${3:_i = _i + 1} }] do {",
-            "\t$0",
-            "};"
-        ],
-        "description": "for [{...}, {...}, {...}] do {...};"
+        "description": "for \"_i\" from A to B do {...}"
     },
     "for-step": {
         "prefix": "forstep",
         "body": [
-            "for \"${1:_i}\" from ${2:A} to ${3:B} step ${4:1} do {",
-            "\t$0",
-            "};"
+            "for \"_${1:i}\" from ${2:A} to ${3:B} step ${4:1} do {${5:code}}$0"
         ],
-        "description": "for \"_i\" from A to B step C do {...};"
+        "description": "for \"_i\" from A to B step C do {...}"
+    },
+    "for-spec": {
+        "prefix": [
+            "forc",
+            "forarray"
+        ],
+        "body": [
+            "for [{${3:private _${1:i} = ${2:A}}}, {${5:_${1:i} < ${4:B}}}, {${7:_${1:i} = _${1:i} ${6:+ 1}}}] do {${8:code}}$0"
+        ],
+        "description": "for [{...}, {...}, {...}] do {...}"
+    },
+    "for-each": {
+        "prefix": "forEach",
+        "body": [
+            "{${2:code}} forEach ${1:Array}$0"
+        ]
     },
 
     "while": {
         "prefix": "while",
         "body": [
-            "while { ${1:condition} } do {",
-            "\t$0",
-            "};"
+            "while {${1:condition}} do {${2:code}}$0"
         ],
-        "description": "while {...} do {...};"
+        "description": "while {...} do {...}"
     },
     "do-while": {
-        "prefix": "dowhile",
+        "prefix": "do while",
         "body": [
-            "$0",
-            "while { ${1:condition} } do {",
-            "\t$0",
-            "};"
+            "${1:code}; while {${2:condition}} do {${1:code}}$0"
         ],
-        "description": "do {...} while (...);"
+        "description": "do {...} while (...)"
     },
 
     "switch": {
         "prefix": "switch",
         "body": [
-            "switch (${1:condition}) do {",
-            "\t$0",
-            "};"
+            "switch (${1:condition}) do {${2:cases}}$0"
         ],
-        "description": "switch (...) do {...};"
+        "description": "switch (...) do {...}"
     },
     "case": {
         "prefix": "case",
         "body": [
-            "case ${1:value}: {",
-            "\t$0",
-            "};"
+            "case (${1:value}): {${2:code}}$0"
         ],
-        "description": "case A: {...};"
+        "description": "case A: {...}"
     },
-    "case-same": {
-        "prefix": "casesame",
+    "case-plain": {
+        "prefix": "case",
         "body": [
-            "case ${1:value};$0"
+            "case (${1:value})$0"
         ],
-        "description": "case A;"
+        "description": "case A"
     },
     "default": {
         "prefix": "default",
         "body": [
-            "default {",
-            "\t$0",
-            "};"
+            "default {${1:code}}$0"
         ],
-        "description": "default {...};"
+        "description": "default {...}"
     },
 
     "with": {
         "prefix": "with",
         "body": [
-            "with ${1:namespace} do {",
-            "\t$0",
-            "};"
+            "with ${1:namespace} do {${2:code}}$0"
         ],
         "description": "with namespace do {...};"
     },
 
-    "variable-set": {
-        "prefix": "setvar",
+    "set-variable": {
+        "prefix": "setVar",
         "body": [
-            "${1:namespace} setVariable [\"${2:TAG}_${3:name}\", ${4:value}];$0"
+            "${1:namespace} setVariable [${2:VarName}, ${3:value}];$0"
         ],
-        "description": "space setVariable [name, A];"
+        "description": "namespace setVariable [name, value]"
     },
-    "variable-set-share": {
-        "prefix": "setvarshare",
+    "set-variable-share": {
+        "prefix": "setVarShare",
         "body": [
-            "${1:namespace} setVariable [\"${2:TAG}_${3:name}\", ${4:value}, ${5:share}];$0"
+            "${1:namespace} setVariable [${2:VarName}, ${3:value}, ${4:share}];$0"
         ],
-        "description": "space setVariable [name, A, true];"
+        "description": "namespace setVariable [name, value, global]"
     },
-
-    "variable-get": {
-        "prefix": "getvar",
+    "get-variable": {
+        "prefix": "getVar",
         "body": [
-            "${1:namespace} getVariable \"${2:TAG}_${3:name}\"$0"
+            "${1:namespace} getVariable ${2:VarName}$0"
         ],
-        "description": "space getVariable name"
+        "description": "namespace getVariable name"
     },
-    "variable-get-default": {
-        "prefix": "getvardefault",
+    "get-variable-default": {
+        "prefix": "getVarDefault",
         "body": [
-            "${1:namespace} getVariable [\"${2:TAG}_${3:name}\", ${4:default}]$0"
+            "${1:namespace} getVariable [${2:VarName}, ${3:defaultValue}]$0"
         ],
-        "description": "space getVariable [name, A]"
+        "description": "namespace getVariable [name, default]"
     },
 
     "call": {
         "prefix": "call",
         "body": [
-            "${1:variable} = [$2] call ${3:TAG}_fnc_${4:name};$0"
+            "${2:arguments} call ${3:Func}$0"
         ],
-        "description": "variable = [] call func"
+        "description": "argv call func"
     },
-    "spawn": {
+    "spawn-code": {
         "prefix": "spawn",
         "body": [
-            "${1:handle} = [$2] spawn ${3:TAG}_fnc_${4:name};$0"
+            "${1:handle} = ${2:arguments} spawn {${3:code}}$0"
         ],
-        "description": "handle = [] spawn func;"
+        "description": "handle = argv spawn {...}"
+    },
+    "spawn-fnc": {
+        "prefix": "spawnFunction",
+        "body": [
+            "${1:handle} = ${2:arguments} spawn ${3:Func}$0"
+        ],
+        "description": "handle = argv spawn func"
     },
     "exec-sqf": {
-        "prefix": "execsqf",
+        "prefix": "execVM",
         "body": [
-            "${1:handle} = [$2] execVM \"${3:file}.sqf\";$0"
+            "${1:handle} = ${2:arguments} execVM \"${3:file}.sqf\"$0"
         ],
-        "description": "handle = [] execVM file;"
+        "description": "handle = argv execVM \"file.sqf\";"
     },
     "exec-fsm": {
-        "prefix": "execfsm",
+        "prefix": "execFSM",
         "body": [
-            "${1:handle} = [$2] execFSM \"${3:file}.fsm\";$0"
+            "${1:handle} = ${2:arguments} execFSM \"${3:file}.fsm\"$0"
         ],
-        "description": "handle = [] execFSM file;"
+        "description": "handle = argv execFSM \"file.fsm\"$0"
     },
     "exec-sqs": {
-        "prefix": "execsqs",
+        "prefix": "exec",
         "body": [
-            "[$1] exec \"${2:file}.sqs\";$0"
+            "${1:arguments} exec \"${2:file}.sqs\"$0"
         ],
-        "description": "[] exec file;"
+        "description": "argv exec \"file.sqs\";"
     },
-
+    
     "compile": {
         "prefix": "compile",
         "body": [
-            "${1:TAG}_fnc_${2:name} = compile preprocessFileLineNumbers \"${3:file}.sqf\";$0"
+            "compileScript [\"${1:file}.sqf\", ${2:isFinal}, ${3:header}]$0"
         ],
-        "description": "Compile function"
+        "description": "Compile file"
     },
-    "compile-final": {
-        "prefix": "compilefinal",
+    "compile-string": {
+        "prefix": "compileString",
         "body": [
-            "${1:TAG}_fnc_${2:name} = compileFinal preprocessFileLineNumbers \"${3:file}.sqf\";$0"
+            "compile${1:Final} ${2:\"string\"}$0"
         ],
-        "description": "Compile function and protect it from overwrite"
+        "description": "Compile string"
     },
 
     "log": {
         "prefix": "log",
         "body": [
-            "diag_log formatText [\"%1(%2) [LOG] %3\", __FILE__, __LINE__, \"${1:message}\"];$0"
+            "diag_log formatText [\"[LOG] %1(%2): %3\", __FILE__, __LINE__, ${1:\"message\"}]$0"
         ],
         "description": "Write message to .rpt-file"
     },
     "warning": {
         "prefix": "warning",
         "body": [
-            "diag_log formatText [\"%1(%2) [WARNING] %3\", __FILE__, __LINE__, \"${1:message}\"];$0"
+            "diag_log formatText [\"[WARNING] %1(%2): %3\", __FILE__, __LINE__, ${1:\"message\"}]$0"
         ],
         "description": "Write warning to .rpt-file"
     },
     "error": {
         "prefix": "error",
         "body": [
-            "diag_log formatText [\"%1(%2) [ERROR] %3\", __FILE__, __LINE__, \"${1:message}\"];",
-            "throw [__FILE__, __LINE__, \"${1:message}\"];$0"
+            "diag_log formatText [\"[ERROR] %1(%2): %3\", __FILE__, __LINE__, ${1:\"message\"}]; throw [__FILE__, __LINE__, ${2:errorcode}]$0"
         ],
         "description": "Write error to .rpt-file and throw exception"
+    },
+    "error-noexcept": {
+        "prefix": "errorNoexcept",
+        "body": [
+            "diag_log formatText [\"[ERROR] %1(%2): %3\", __FILE__, __LINE__, ${1:\"message\"}]$0"
+        ],
+        "description": "Write error to .rpt-file"
     },
     "assert": {
         "prefix": "assert",
         "body": [
-            "if !(${1:condition}) then {",
-            "\tdiag_log formatText [\"%1(%2) [ERROR] %3\", __FILE__, __LINE__, format [\"Assertion failed: %1\", { ${1:condition}; }]];",
-            "\tthrow [__FILE__, __LINE__, format [\"Assertion failed: %1\", { ${1:condition}; }]];",
-            "};$0"
+            "if not (${1:condition}) then {diag_log formatText [\"[ERROR] %1(%2): %3\", __FILE__, __LINE__, ${2:format [\"Assertion failed: %1\", {${1:condition}}}]]; throw [__FILE__, __LINE__, \"ASSERTION_FAILED\"]}$0"
         ],
         "description": "Check condition and throw exception if false"
+    },
+    "assert-noexcept": {
+        "prefix": "assertNoexcept",
+        "body": [
+            "if not (${1:condition}) then {diag_log formatText [\"[ERROR] %1(%2): %3\", __FILE__, __LINE__, ${2:format [\"Assertion failed: %1\", {${1:condition}}}]]}$0"
+        ],
+        "description": "Assert condition and write error to log"
     },
 
     "return": {
         "prefix": "return",
         "body": [
-            "if (true) exitWith { ${1:value} };$0"
+            "${1:value} breakOut ${2:_fnc_scriptName}$0"
+        ],
+        "description": "Return value from function"
+    },
+    "exit": {
+        "prefix": "exitWith",
+        "body": [
+            "if (${1:true}) exitWith {${2:value}}$0"
         ],
         "description": "Return value to parent scope"
-    },
-    "return-if": {
-        "prefix": "returnif",
-        "body": [
-            "if (${1:condition}) exitWith { ${2:value} };$0"
-        ],
-        "description": "Return value to parent scope if condition is true"
-    },
-    "return-scope": {
-        "prefix": "returnscope",
-        "body": [
-            "${1:value} breakOut \"${2:scope}\";$0"
-        ],
-        "description": "Return value from scope"
     },
 
     "increment": {
         "prefix": "inc",
         "body": [
-            "${1:A} = ${1:A} + 1;$0"
+            "${1:A} = ${1:A} + 1$0"
         ],
-        "description": "A = A + 1;"
+        "description": "A = A + 1"
     },
     "decrement": {
         "prefix": "dec",
         "body": [
-            "${1:A} = ${1:A} - 1;$0"
+            "${1:A} = ${1:A} - 1$0"
         ],
-        "description": "A = A - 1;"
+        "description": "A = A - 1"
     },
 
     "compound-assignment-add": {
         "prefix": "add=",
         "body": [
-            "${1:A} = ${1:A} + ${2:B};$0"
+            "${1:A} = ${1:A} + ${2:B}$0"
         ],
-        "description": "A = A + B;"
+        "description": "A = A + B"
     },
     "compound-assignment-sub": {
         "prefix": "sub=",
         "body": [
-            "${1:A} = ${1:A} - ${2:B};$0"
+            "${1:A} = ${1:A} - ${2:B}$0"
         ],
-        "description": "A = A - B;"
+        "description": "A = A - B"
     },
     "compound-assignment-mul": {
         "prefix": "mul=",
         "body": [
-            "${1:A} = ${1:A} * ${2:B};$0"
+            "${1:A} = ${1:A} * ${2:B}$0"
         ],
-        "description": "A = A * B;"
+        "description": "A = A * B"
     },
     "compound-assignment-div": {
         "prefix": "div=",
         "body": [
-            "${1:A} = ${1:A} / ${2:B};$0"
+            "${1:A} = ${1:A} / ${2:B}$0"
         ],
-        "description": "A = A / B;"
+        "description": "A = A / B"
     },
     "compound-assignment-pow": {
         "prefix": "pow=",
         "body": [
-            "${1:A} = ${1:A} ^ ${2:B};$0"
+            "${1:A} = ${1:A} ^ ${2:B}$0"
         ],
-        "description": "A = A ^ B;"
+        "description": "A = A ^ B"
     },
     "compound-assignment-mod": {
         "prefix": "mod=",
         "body": [
-            "${1:A} = ${1:A} % ${2:B};$0"
+            "${1:A} = ${1:A} % ${2:B}$0"
         ],
-        "description": "A = A % B;"
+        "description": "A = A % B"
     },
     "compound-assignment-sqr": {
         "prefix": "sqr=",
         "body": [
-            "${1:A} = ${1:A} ^ 2;$0"
+            "${1:A} = ${1:A} ^ 2$0"
         ],
-        "description": "A = A ^ 2;"
+        "description": "A = A ^ 2"
     },
 
     "sqr": {
@@ -375,63 +378,78 @@
         "description": "ARRAY select INDEX"
     },
     "select-hash": {
-        "prefix": "selecthash",
+        "prefix": [
+            "selectHash",
+            "hash"
+        ],
         "body": [
             "${1:array} # ${2:index}$0"
         ],
         "description": "ARRAY # INDEX"
     },
     "select-bool": {
-        "prefix": "selectbool",
+        "prefix": "selectBool",
         "body": [
             "[${3:false}, ${2:true}] select ${1:condition}$0"
         ],
-        "description": "[A, B] select condition"
+        "description": "[B, A] select condition"
     },
 
     "try-catch": {
         "prefix": "try",
         "body": [
-            "try {",
-            "\t$0",
-            "} catch {",
-            "\t",
-            "};"
+            "try {${1:tryCode}} catch {${2:catchCode}}$0"
         ],
         "description": "Execute code and catch exceptions"
     },
-    "try-catch-params": {
-        "prefix": "tryparams",
+    "try-catch-func": {
+        "prefix": "tryFunction",
         "body": [
-            "[$1] try {",
-            "\t$0",
-            "} catch {",
-            "\t",
-            "};"
+            "${1:arguments} try ${2:code} catch {${3:catchCode}}$0"
         ],
         "description": "Execute code with params and catch exceptions"
     },
-    "try-catch-fnc": {
-        "prefix": "tryfnc",
-        "body": [
-            "[$1] try ${2:TAG}_fnc_${3:name} catch {$0};"
-        ],
-        "description": "Execute function and catch exceptions"
-    },
 
     "name-variable": {
-        "prefix": "var",
+        "prefix": [
+            "variable"
+        ],
         "body": [
             "${1:TAG}_${2:name}"
         ],
         "description": "Variable name"
     },
+    "name-variable-quoted": {
+        "prefix": [
+            "qVariable",
+            "varQuoted",
+            "variableQuoted"
+        ],
+        "body": [
+            "\"${1:TAG}_${2:name}\"$0"
+        ],
+        "description": "\"TAG_VariableName\""
+    },
     "name-function": {
-        "prefix": "fnc",
+        "prefix": [
+            "fnc",
+            "function"
+        ],
         "body": [
             "${1:TAG}_fnc_${2:name}"
         ],
         "description": "Function name"
+    },
+    "name-function-quoted": {
+        "prefix": [
+            "qfnc",
+            "fncQuoted",
+            "functionQuoted"
+        ],
+        "body": [
+            "\"${1:TAG}_fnc_${2:name}\"$0"
+        ],
+        "description": "\"TAG_fnc_functionName\""
     },
 
     "include": {
@@ -494,11 +512,27 @@
         ],
         "description": "#ifndef ... #endif"
     },
-    "else": {
+    "ppelse": {
         "prefix": "ppelse",
         "body": [
             "#else$0"
         ],
         "description": "#else"
+    },
+    
+    "class": {
+        "prefix": "class",
+        "body": [
+            "[$0",
+            "\t[\"#type\", \"\"],",
+            "\t[\"#base\", []],",
+            "\t[\"#flags\", []],",
+            "\t[\"#create\", {}],",
+            "\t[\"#clone\", {}],",
+            "\t[\"#delete\", {}],",
+            "\t[\"#str\", {}]",
+            "];"
+        ],
+        "description": "Create class definition for HashMap Object"
     }
 }

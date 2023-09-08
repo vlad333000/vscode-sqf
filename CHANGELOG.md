@@ -1,5 +1,12 @@
 # SQF for VS Code change Log
 
+## 0.16.0
+
+* Added: commands, variables and preprocessor from v2.14
+* Changed: some changes in snippets for sqf
+* Changed: overwrited parser for formating - now not highlight wrong formatters as error and parse more variants of formatting
+* Fixed: `,` as statement separator highlighted as error
+
 ## 0.15.0
 
 * Just fix version number

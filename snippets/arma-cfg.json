@@ -2,20 +2,21 @@
     "class": {
         "prefix": "class",
         "body": [
-            "class ${1:name} {",
-            "\t$0",
-            "};"
+            "class ${1:name} {${2:definition}}$0"
         ],
-        "description": "class name {...};"
+        "description": "class name {...}"
+    },
+    "class-declare": {
+        "prefix": "classDeclare",
+        "body": "class ${1:name}$0",
+        "description": "class name"
     },
     "class-inherit": {
-        "prefix": "classinherit",
+        "prefix": "classInherit",
         "body": [
-            "class ${1:name} : ${2:base} {",
-            "\t$0",
-            "};"
+            "class ${1:name} : ${2:base} {${2:definition}}$0"
         ],
-        "description": "class name : base {...};"
+        "description": "class name : base {...}"
     },
 
     "number": {
@@ -35,9 +36,16 @@
     "array": {
         "prefix": "array",
         "body": [
-            "${1:name}[] = {$2};$0"
+            "${1:name}[] = {$2}$0"
         ],
-        "description": "name[] = {...};"
+        "description": "name[] = {...}"
+    },
+    "array-add": {
+        "prefix": "arrayAdd",
+        "body": [
+            "${1:name}[] += {$2}$0"
+        ],
+        "description": "name[] += {...}"
     },
     "bool": {
         "prefix": "bool",

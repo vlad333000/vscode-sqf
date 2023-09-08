@@ -14,28 +14,31 @@
 * Snippets library **
 
 *To enable this syntax highlighting, you need to customize themes following [this instruction](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme). Required textMate spaces:
+
 ```json
-"variable.name.public.sqf"              // Global variables
-"variable.name.private.sqf"             // Local variables
+"variable.name.publi.sqf"               // Global variables
+"variable.name.private.sqf"             // Local-only variables
 "support.function.<TAG>.sqf"            // Known functions (Supported TAGs listed below)
 "support.variable.<TAG>.sqf"            // Known variables (Supported TAGs listed below)
 "support.variable.<TAG>.reserved.sqf"   // Reserved variables and functions = may not exists (Supported TAGs listed below)
 ```
 
 **Examples:
-```
+
+```text
 xor     >> ((A || B) && !(A && B))
 ifthrow >> if (COND) throw [__FILE__, __LINE__, "exception"]
 setvar  >> namespace setVariable ["TAG_name", value]
 getvar  >> namespace getVariable "TAG_name"
 ```
 
-## Supported products:
+## Supported products
 
 * [ArmA 3 (v2.12)](https://community.bistudio.com/wiki/Category:Arma_3:_Editing)
   * [Functions](https://community.bistudio.com/wiki/Category:Arma_3:_Functions)
   * [Commands](https://community.bistudio.com/wiki/Category:Scripting_Commands_Arma_3)
   * Reserved identifiers:
-  ```
+
+  ```text
   BIS, BIN
   ```

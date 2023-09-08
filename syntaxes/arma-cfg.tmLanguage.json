@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Arma config",
     "scopeName": "source.arma-cfg",
-    "version": "1.1.0",
+    "version": "2.14",
 	"patterns": [
         {
             "include": "#preprocessor-include"
@@ -161,7 +161,7 @@
         "property": {
             "patterns": [
                 {
-                    "begin": "\\b(\\w+)(\\[\\])\\s*(=)\\n*",
+                    "begin": "\\b(\\w+)(\\[\\])\\s*(\\+?=)\\n*",
                     "beginCaptures": {
                         "1": {
                             "name": "variable.name.property.arma-cfg"
@@ -226,6 +226,24 @@
                 },
                 {
                     "match": "(import)\\s+(\\w+)\\s+(from)\\s+(\\w+)\\s*(?=;)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.import.arma-cfg"
+                        },
+                        "2": {
+                            "name": "entity.name.class.arma-cfg"
+                        },
+                        "3": {
+                            "name": "keyword.control.from.arma-cfg"
+                        },
+                        "4": {
+                            "name": "entity.name.class.arma-cfg"
+                        }
+                    },
+                    "name": "meta.import.arma-cfg"
+                },
+                {
+                    "match": "(import)\\s+(\\w+)\\s+(as)\\s+(\\w+)\\s*(?=;)",
                     "captures": {
                         "1": {
                             "name": "keyword.control.import.arma-cfg"
@@ -390,10 +408,7 @@
         "value-expression": {
             "patterns": [
                 {
-                    "include": "#preprocessor-file"
-                },
-                {
-                    "include": "#preprocessor-line"
+                    "include": "#preprocessor-macros"
                 },
                 {
                     "include": "#preprocessor-eval"
@@ -548,10 +563,7 @@
                             "include": "#preprocessor-str"
                         },
                         {
-                            "include": "#preprocessor-file"
-                        },
-                        {
-                            "include": "#preprocessor-line"
+                            "include": "#preprocessor-macros"
                         },
                         {
                             "include": "#preprocessor-exec"
@@ -587,10 +599,7 @@
                             "include": "#preprocessor-str"
                         },
                         {
-                            "include": "#preprocessor-file"
-                        },
-                        {
-                            "include": "#preprocessor-line"
+                            "include": "#preprocessor-macros"
                         },
                         {
                             "include": "#preprocessor-exec"
@@ -727,19 +736,26 @@
                 }
             ]
         },
-        "preprocessor-file": {
+        "preprocessor-macros": {
             "patterns": [
                 {
-                    "match": "\\b__FILE__\\b",
-                    "name": "keyword.control.preprocessor.file.arma-cfg"
-                }
-            ]
-        },
-        "preprocessor-line": {
-            "patterns": [
+                    "match": "\\b__(?:LINE|FILE|DATE_ARR|DATE_STR|DATE_STR_ISO8601|TIME|TIME_UTC|COUNTER|TIMESTAMP_UTC|COUNTER_RESET|RAND_INT(?:8|16|32|64)|RAND_UINT(?:8|16|32|64)|GAME_VER|GAME_VER_MAJ|GAME_VER_MIN|GAME_BUILD|A3_DIAG|ARMA|ARMA3|A3_DEBUG)__\\b",
+                    "name": "keyword.control.preprocessor.macro.arma-cfg"
+                },
                 {
-                    "match": "\\b__LINE__\\b",
-                    "name": "keyword.control.preprocessor.line.arma-cfg"
+                    "match": "\\b__has_include\\(\\s*((\")[^\\n\\r\"]*(\"))\\s*\\)",
+                    "name": "keyword.control.preprocessor.macro.arma-cfg",
+                    "captures": {
+                        "1": {
+                            "name": "string.quoted.double.arma-cfg"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.string.quoted.double.begin.arma-cfg"
+                        },
+                        "3": {
+                            "name": "punctuation.definition.string.quoted.double.end.arma-cfg"
+                        }
+                    }
                 }
             ]
         },
@@ -816,10 +832,7 @@
                     ]
                 },
                 {
-                    "include": "#preprocessor-file"
-                },
-                {
-                    "include": "#preprocessor-line"
+                    "include": "#preprocessor-macros"
                 },
                 {
                     "include": "#preprocessor-line-continuation"
