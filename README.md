@@ -16,8 +16,8 @@
 *To enable this syntax highlighting, you need to customize themes following [this instruction](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme). Required textMate spaces:
 
 ```json
-"variable.name.publi.sqf"               // Global variables
-"variable.name.private.sqf"             // Local-only variables
+"variable.name.public.sqf"              // Global variables
+"variable.name.private.sqf"             // Local variables
 "support.function.<TAG>.sqf"            // Known functions (Supported TAGs listed below)
 "support.variable.<TAG>.sqf"            // Known variables (Supported TAGs listed below)
 "support.variable.<TAG>.reserved.sqf"   // Reserved variables and functions = may not exists (Supported TAGs listed below)
