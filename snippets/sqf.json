@@ -24,7 +24,7 @@
     "if": {
         "prefix": "if",
         "body": [
-            "if (${1:condition}) then {${1:true}}$0"
+            "if (${1:condition}) then {${2:true}}$0"
         ],
         "description": "if (...) then {...}"
     },
@@ -184,7 +184,7 @@
     "call": {
         "prefix": "call",
         "body": [
-            "${2:arguments} call ${3:Func}$0"
+            "${1:arguments} call ${2:Func}$0"
         ],
         "description": "argv call func"
     },
@@ -223,7 +223,7 @@
         ],
         "description": "argv exec \"file.sqs\";"
     },
-    
+
     "compile": {
         "prefix": "compile",
         "body": [
@@ -519,7 +519,7 @@
         ],
         "description": "#else"
     },
-    
+
     "class": {
         "prefix": "class",
         "body": [
