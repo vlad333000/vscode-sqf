@@ -739,7 +739,7 @@
         "preprocessor-macros": {
             "patterns": [
                 {
-                    "match": "\\b__(?:LINE|FILE|DATE_ARR|DATE_STR|DATE_STR_ISO8601|TIME|TIME_UTC|COUNTER|TIMESTAMP_UTC|COUNTER_RESET|RAND_INT(?:8|16|32|64)|RAND_UINT(?:8|16|32|64)|GAME_VER|GAME_VER_MAJ|GAME_VER_MIN|GAME_BUILD|A3_DIAG|ARMA|ARMA3|A3_DEBUG)__\\b",
+                    "match": "\\b__(?:A3_DEBUG|A3_DIAG|ARMA|ARMA3|COUNTER|COUNTER_RESET|DATE_ARR|DATE_STR|DATE_STR_ISO8601|DAY|FILE|GAME_BUILD|GAME_VER|GAME_VER_MAJ|GAME_VER_MIN|LINE|MONTH|RAND_(?:U)?INT(?:8|16|32|64)|TIME|TIME_UTC|TIMESTAMP_UTC|YEAR)__\\b",
                     "name": "keyword.control.preprocessor.macro.arma-cfg"
                 },
                 {
