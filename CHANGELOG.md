@@ -1,5 +1,9 @@
 # SQF for VS Code change Log
 
+## 0.17.0
+
+* Added: new commands fro v2.16
+
 ## 0.16.0
 
 * Added: commands, variables and preprocessor from v2.14

@@ -34,7 +34,7 @@ getvar  >> namespace getVariable "TAG_name"
 
 ## Supported products
 
-* [ArmA 3 (v2.14)](https://community.bistudio.com/wiki/Category:Arma_3:_Editing)
+* [ArmA 3 (v2.16)](https://community.bistudio.com/wiki/Category:Arma_3:_Editing)
   * [Functions](https://community.bistudio.com/wiki/Category:Arma_3:_Functions)
   * [Commands](https://community.bistudio.com/wiki/Category:Scripting_Commands_Arma_3)
   * Reserved identifiers:
