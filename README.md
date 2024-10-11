@@ -5,15 +5,15 @@
 
 ## Features
 
-* Full SQF language syntax
-* Preprocessor commands [Wiki](https://community.bistudio.com/wiki/PreProcessor_Commands)
-* Highlight structured text attributes, escape characters and placeholders [Wiki](https://community.bistudio.com/wiki/Structured_Text)
-* Highlight deprecated commands and some invalid statements
-* Highlight identifiers reserved by developers
-* The color difference between global and local variables *
-* Snippets library **
+- Full SQF language syntax
+- Preprocessor commands [Wiki](https://community.bistudio.com/wiki/PreProcessor_Commands)
+- Highlight structured text attributes, escape characters and placeholders [Wiki](https://community.bistudio.com/wiki/Structured_Text)
+- Highlight deprecated commands and some invalid statements
+- Highlight identifiers reserved by developers
+- The color difference between global and local variables \*
+- Snippets library \*\*
 
-*To enable this syntax highlighting, you need to customize themes following [this instruction](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme). Required textMate spaces:
+\*To enable this syntax highlighting, you need to customize themes following [this instruction](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme). Required textMate spaces:
 
 ```json
 "variable.name.public.sqf"              // Global variables
@@ -23,7 +23,7 @@
 "support.variable.<TAG>.reserved.sqf"   // Reserved variables and functions = may not exists (Supported TAGs listed below)
 ```
 
-**Examples:
+\*\*Examples:
 
 ```text
 xor     >> ((A || B) && !(A && B))
@@ -34,10 +34,11 @@ getvar  >> namespace getVariable "TAG_name"
 
 ## Supported products
 
-* [ArmA 3 (v2.16)](https://community.bistudio.com/wiki/Category:Arma_3:_Editing)
-  * [Functions](https://community.bistudio.com/wiki/Category:Arma_3:_Functions)
-  * [Commands](https://community.bistudio.com/wiki/Category:Scripting_Commands_Arma_3)
-  * Reserved identifiers:
+- [ArmA 3 (v2.18)](https://community.bistudio.com/wiki/Category:Arma_3:_Editing)
+
+  - [Functions](https://community.bistudio.com/wiki/Category:Arma_3:_Functions)
+  - [Commands](https://community.bistudio.com/wiki/Category:Scripting_Commands_Arma_3)
+  - Reserved identifiers:
 
   ```text
   BIS, BIN
