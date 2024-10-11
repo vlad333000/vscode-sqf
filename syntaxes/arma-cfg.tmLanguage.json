@@ -1,9 +1,9 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Arma config",
+    "name": "Arma config",
     "scopeName": "source.arma-cfg",
-    "version": "2.14",
-	"patterns": [
+    "version": "2.18",
+    "patterns": [
         {
             "include": "#preprocessor-include"
         },
@@ -262,9 +262,6 @@
                 }
             ]
         },
-
-
-
         "value": {
             "patterns": [
                 {
@@ -460,9 +457,6 @@
                 }
             ]
         },
-
-
-
         "preprocessor-include": {
             "patterns": [
                 {
@@ -739,7 +733,7 @@
         "preprocessor-macros": {
             "patterns": [
                 {
-                    "match": "\\b__(?:A3_DEBUG|A3_DIAG|ARMA|ARMA3|COUNTER|COUNTER_RESET|DATE_ARR|DATE_STR|DATE_STR_ISO8601|DAY|FILE|GAME_BUILD|GAME_VER|GAME_VER_MAJ|GAME_VER_MIN|LINE|MONTH|RAND_(?:U)?INT(?:8|16|32|64)|TIME|TIME_UTC|TIMESTAMP_UTC|YEAR)__\\b",
+                    "match": "\\b__(?:A3_DEBUG|A3_DIAG|ARMA|ARMA3|COUNTER|COUNTER_RESET|DATE_ARR|DATE_STR|DATE_STR_ISO8601|DAY|FILE(?:_(NAME|SHORT))?|GAME_BUILD|GAME_VER|GAME_VER_MAJ|GAME_VER_MIN|LINE|MONTH|RAND_(?:U)?INT(?:8|16|32|64)|TIME|TIME_UTC|TIMESTAMP_UTC|YEAR)__\\b",
                     "name": "keyword.control.preprocessor.macro.arma-cfg"
                 },
                 {
@@ -817,9 +811,6 @@
                 }
             ]
         },
-
-
-
         "preprocessor-eval-exp": {
             "patterns": [
                 {
