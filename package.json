@@ -2,7 +2,7 @@
     "name": "sqf",
     "displayName": "%displayName%",
     "description": "%description%",
-    "version": "0.18.0",
+    "version": "0.18.1",
     "publisher": "vlad333000",
     "license": "GPL-3.0-or-later",
     "homepage": "https://github.com/vlad333000/vscode-sqf/blob/master/README.md",

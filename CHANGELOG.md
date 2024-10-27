@@ -1,12 +1,16 @@
 # SQF for VS Code change Log
 
+## 0.18.1
+
+- Added: command from v2.18 hotfix
+
 ## 0.18.0
 
-- Added: new commands, functions and preprocessor macros from v2.18
+- Added: commands, functions and preprocessor macros from v2.18
 
 ## 0.17.0
 
-- Added: new commands from v2.16
+- Added: commands from v2.16
 - Fixed: _classInherit_ config snippet
 
 ## 0.16.0
@@ -36,7 +40,7 @@
 - Removed: wrong formats in string (Only valid formats are highlighted)
 - Removed: highlighting for deprecated commands
 - Removed: reserved variables for mods (need something else)
-- Added: new preprocessor macros
+- Added: preprocessor macros
 - Added: highlighting for known BIS functions
 - Added: BIN\* variables (DLC Contact which avaiable in vanila game)
 - Added: #if preprocessor directive
